@@ -17,7 +17,7 @@ public class Main {
 
         }
         else {
-            //System.out.println("Single");
+            //System.out.println("Singlee");
 
             resources.chooseDifficulty(50); //500
             System.out.print("Pick your Difficulty (Default is Medium) : ");
