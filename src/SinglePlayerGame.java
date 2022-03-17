@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.lang.Math;
 
 public class SinglePlayerGame {
     Resources resources = new Resources();
@@ -18,11 +19,13 @@ public class SinglePlayerGame {
     public void beginTheGame() throws InterruptedException {
         Game letsPlay = new Game(playerName, playerHealth, "Billy", opponentHealth);
 
-        resources.pickYourPokemonPlayerOnePicture(100);//100
+        resources.pickYourPokemonPlayerOnePicture(100);//Default Delay : 100
         letsPlay.pickPlayerOnePokemon(input.next());
 
-        resources.pickYourPokemonPlayerTwoPicture(100);//100
-        letsPlay.pickPlayerTwoPokemon(input.next());
+        //resources.pickYourPokemonPlayerTwoPicture(100);//Default Delay : 100
+        letsPlay.pickPlayerTwoPokemon((int)(Math.random()*10)+1);
+
+
 
         //Pick your Pokemon
 
