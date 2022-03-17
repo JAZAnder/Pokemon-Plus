@@ -41,45 +41,59 @@ public class Game {
         }
 
     }
-    public String pickPlayerTwoPokemon(String pokemonName) {
+
+    public void pickPlayerTwoPokemon(String pokemonName) {
+
+        pickPlayerTwoPokemon(pokemonName, true);
+
+    }
+
+    public void pickPlayerTwoPokemon(int computerInput){
+        if(computerInput == 1){
+            pickPlayerTwoPokemon("Wigglypuff", false);
+        }
+        else if(computerInput == 2){
+            pickPlayerTwoPokemon("Nidoqueen", false);
+        }
+        else{
+            pickPlayerTwoPokemon("Fearow", false);
+        }
+    }
+
+    public void pickPlayerTwoPokemon(String pokemonName, Boolean printPicture) {
         if((pokemonName.toLowerCase()).charAt(0) == 'w'){
+            if(printPicture){
+                System.out.println(resources.wigglypuffPicture());
+            }
 
 
 
-            System.out.println("Wigglypuff");
         }
         else if((pokemonName.toLowerCase()).charAt(0) == 'n'){
+            if(printPicture){
+                System.out.println(resources.nidoqueenPicture());
+            }
 
 
 
 
-            System.out.println("Nidoqueen");
 
         }
         else if((pokemonName.toLowerCase()).charAt(0) == 'f'){
+            if(printPicture){
+                System.out.println(resources.fearowPicture());
+            }
 
 
 
-            System.out.println("Fearow");
 
         }
         else{
-            return pickPlayerTwoPokemon("Wigglypuff");
+            pickPlayerTwoPokemon("Wigglypuff");
         }
 
-        return pokemonName;
     }
-    public void pickPlayerTwoPokemon(int computerInput){
-        if(computerInput == 1){
-            System.out.println("Wigglypuff");
-        }
-        else if(computerInput == 2){
-            System.out.println("Nidoqueen");
-        }
-        else{
-            System.out.println("Fearow");
-        }
-    }
+
 
 
 

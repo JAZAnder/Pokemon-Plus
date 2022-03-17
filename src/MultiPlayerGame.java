@@ -18,12 +18,12 @@ public class MultiPlayerGame {
 
         Game letsPlay = new Game(playerOne, playerOneHealth, playerTwo, playerTwoHealth);
 
-        resources.pickYourPokemonPlayerOnePicture(100);//Leave Blank for 100
+        resources.pickYourPokemonPlayerOnePicture(playerOne,100);//Leave Blank for 100
         letsPlay.pickPlayerOnePokemon(input.next());
 
         Thread.sleep(1000);
 
-        resources.pickYourPokemonPlayerTwoPicture(100);//Leave Blank for 100
+        resources.pickYourPokemonPlayerTwoPicture(playerTwo,100);//Leave Blank for 100
         letsPlay.pickPlayerTwoPokemon(input.next());
     }
 }

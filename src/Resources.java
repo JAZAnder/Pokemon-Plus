@@ -79,6 +79,7 @@ public class Resources {
     }
 
 
+
     public void intro() throws InterruptedException{
         intro(750);
     }
@@ -115,11 +116,12 @@ public class Resources {
     }
 
 
-    public void pickYourPokemonPlayerOnePicture() throws InterruptedException{
-        pickYourPokemonPlayerOnePicture(100);
+
+    public void pickYourPokemonPlayerOnePicture(String playerName) throws InterruptedException{
+        pickYourPokemonPlayerOnePicture(playerName,100);
     }
 
-    public void pickYourPokemonPlayerOnePicture(int timeDelay) throws InterruptedException{
+    public void pickYourPokemonPlayerOnePicture(String playerName, int timeDelay) throws InterruptedException{
         System.out.println("Choose Your Pokemon");
         System.out.println("-------------------------------------------------------------------------------------------------------------------------------------------------");
         System.out.println("              _.--\"\"`-..                                                                                   _,........__                                                 ");
@@ -232,20 +234,22 @@ public class Resources {
         System.out.println("-------------------------------------------------------------------------------------------------------------------------------------------------");
         System.out.println("                      Charmander                                                                             Squirtle                  ");
         System.out.println("                                                                  Bulbasaur                                                     ");
-        System.out.print("                              Player One Choose Your Pokemon :   ");
+        System.out.print("                              "+playerName+" Choose Your Pokemon :   ");
     }
 
 
-    public void pickYourPokemonPlayerTwoPicture() throws InterruptedException{
-        pickYourPokemonPlayerTwoPicture(100);
+
+    public void pickYourPokemonPlayerTwoPicture(String playerName) throws InterruptedException{
+        pickYourPokemonPlayerTwoPicture(playerName,100);
     }
 
-    public void pickYourPokemonPlayerTwoPicture(int timeDelay) throws InterruptedException{
+    public void pickYourPokemonPlayerTwoPicture(String playerName, int timeDelay) throws InterruptedException{
         Thread.sleep(timeDelay);
         System.out.println("PLayer 2 // Opponent Picture");
         System.out.println("Wigglypuff - Nidoqueen - Fearow");
-        System.out.println("Player 2 choose your Pokemon");
+        System.out.println(playerName + " choose your Pokemon");
     }
+
 
 
     public String charmanderPicture() {
@@ -398,64 +402,66 @@ public class Resources {
     }
 
     public String nidoqueenPicture(){
-        return ("\r\n"
-                + "                                          .\"                            \r\n"
-                + "                                        ,'  |				  								\r\n"
-                + "                                      _,... '.___                         \r\n"
-                + "                             +--._  ,'.-\"+.      \"`-.                     \r\n"
-                + "                         _,---\\   `\" / |p|.'     \"'   \\                   \r\n"
-                + "                       ,- _.---\".   |_,'      ,-\"\"\"\"-._|                  \r\n"
-                + "                     ,' ,.'    .'          ,-'        ,'                  \r\n"
-                + "                   ,' ,' |    .          .^---._      |                   \r\n"
-                + "            |. _  `. /   .    |   ,---.+'       `.    |                   \r\n"
-                + "           ,| | `/\\|.    `    |  .      `-.       .  /                    \r\n"
-                + "       .---. \"`-`.,\\ \\    `-.,'  |         `-._   | '                     \r\n"
-                + "        `.-'        , \"\"\"\"--'..-  \\            `--'.L                     \r\n"
-                + "          .          |`.     `     `._             _,'   .                \r\n"
-                + "           `.        |  `.    |_,..   `-..______.-'  _,-| |. ,\"\\          \r\n"
-                + "             -.     /     +--'/    `.            -,\"'   `\"  \".-'          \r\n"
-                + "               `-+-'      |  /       `.        '\\ |           .L_         \r\n"
-                + "           -\"--.,-`._..._,' j          `.     / | '           (_,'        \r\n"
-                + "          `.    j.-'     `- |            \\   j  |  `.  _...___'           \r\n"
-                + "            `. /__ ,...._  \\|             |  |  |...-`\"                   \r\n"
-                + "              j|  `      ,-/`.           /   `  ;.._                      \r\n"
-                + "          ,-. ||   |\"\"-.'  |  `..__,...-'     \\'    `.                    \r\n"
-                + "          `   |/`--    .  /|                  /----.__\\                   \r\n"
-                + "           \\  .         `' /                 /         \\                  \r\n"
-                + "            . |           ,`.              ,'     ___..+--.               \r\n"
-                + "            +-|          /   `-..______..-\"     ,\"  `.   /___             \r\n"
-                + "          ,'  |         j               .'    ,'      `\"|    /            \r\n"
-                + "       ,-+    .         |`._          ,+_    /          `-..'             \r\n"
-                + "   _.-'  |     `.      /    ``-----:='   `.,'         _,..'               \r\n"
-                + ",-'      L       `-.--'         ,,'        |       ,-'                    \r\n"
-                + "\\_        \\         `._    _,.-'           `.___..'                       \r\n"
-                + "  `.._     `._      __.+'\"'                                               \r\n"
-                + "      `---... +---\"\" mh                                                   \r\n"
-                + "");
+        return ("""
+                \r
+                                                          ."                            \r
+                                                        ,'  |				  								\r
+                                                      _,... '.___                         \r
+                                             +--._  ,'.-"+.      "`-.                     \r
+                                         _,---\\   `" / |p|.'     "'   \\                   \r
+                                       ,- _.---".   |_,'      ,-""\""-._|                  \r
+                                     ,' ,.'    .'          ,-'        ,'                  \r
+                                   ,' ,' |    .          .^---._      |                   \r
+                            |. _  `. /   .    |   ,---.+'       `.    |                   \r
+                           ,| | `/\\|.    `    |  .      `-.       .  /                    \r
+                       .---. "`-`.,\\ \\    `-.,'  |         `-._   | '                     \r
+                        `.-'        , ""\""--'..-  \\            `--'.L                     \r
+                          .          |`.     `     `._             _,'   .                \r
+                           `.        |  `.    |_,..   `-..______.-'  _,-| |. ,"\\          \r
+                             -.     /     +--'/    `.            -,"'   `"  ".-'          \r
+                               `-+-'      |  /       `.        '\\ |           .L_         \r
+                           -"--.,-`._..._,' j          `.     / | '           (_,'        \r
+                          `.    j.-'     `- |            \\   j  |  `.  _...___'           \r
+                            `. /__ ,...._  \\|             |  |  |...-`"                   \r
+                              j|  `      ,-/`.           /   `  ;.._                      \r
+                          ,-. ||   |""-.'  |  `..__,...-'     \\'    `.                    \r
+                          `   |/`--    .  /|                  /----.__\\                   \r
+                           \\  .         `' /                 /         \\                  \r
+                            . |           ,`.              ,'     ___..+--.               \r
+                            +-|          /   `-..______..-"     ,"  `.   /___             \r
+                          ,'  |         j               .'    ,'      `"|    /            \r
+                       ,-+    .         |`._          ,+_    /          `-..'             \r
+                   _.-'  |     `.      /    ``-----:='   `.,'         _,..'               \r
+                ,-'      L       `-.--'         ,,'        |       ,-'                    \r
+                \\_        \\         `._    _,.-'           `.___..'                       \r
+                  `.._     `._      __.+'"'                                               \r
+                      `---... +---"" mh                                                   \r
+                """);
     }
 
     public String fearowPicture(){
-        return ("    ,---...__     ,.._\r\n" +
-                "  .\"\"\"_...   \"\"---\\.,_`\"-._                    __,..._\r\n" +
-                " ,--   \"\"\"\"\"\":--..    \"-   `-._ _,.        ,-\"\" ..----'\"\"\",\r\n" +
-                "`---........_____ ._     `-._  `. |       / /'      '\"\"\"\"-----.\r\n" +
-                "\\\"'\"\"\"\"\"\"''\"\"\"'\"-`           `-. `.      / j     .\\ |\\   -.,:,- .\r\n" +
-                " `-.......___     `._           \\  \\    ]\\ |   . |L ||/\\   `. ` .`.\r\n" +
-                "         __,..==--'/ '           \\  L  A|,'|    \\| |||||  ` .`.. -._\r\n" +
-                "    .--\"\"          `.             L | j  /'\"-.__\\V '/|||   | `. `._ `.\r\n" +
-                "      `....----_..-`\"`/.          | | | j   __ `._   | |'_`.\\  `.  `. |\r\n" +
-                "            -\"'       \\           | `_|.   l  `.  `.   |||   ` | `   \\'\r\n" +
-                "            `-._,...-\"\"\\-         |        |    .   /`.  \\  ..Y   `.  \\\r\n" +
-                "               `-..,'  .`         '         L \\  .  `--\"`.`.`|  .   \\  |\r\n" +
-                "                  \\  ,'  `|     ,'          .\\ +-'-...-^._`. | |..  ,\\ '\r\n" +
-                "                   `\\     `.._ j             /\"       \\  |\\ `..- `.'- `\r\n" +
-                "                    `. ,' | .  |           .'          \\ | `._`.\r\n" +
-                "                      +   | | j           /             `'    `.`.\r\n" +
-                "                       `.+._j_'      __..)                      `..\r\n" +
-                "                        _,-'   .,   j ` .'\"\"`--.                  `\r\n" +
-                "                     _.' .-'  /,'`\"-.  ,` .\\ \\` `\r\n" +
-                "                   ,'  .' / /`,'    ||'` ,'`T|.`-|\r\n" +
-                "                 ___,'/_,._/        L|   . |'-'\\\"\r\n" +
-                "                                    `-   ||    ' ");
+        return ("""
+                    ,---...__     ,.._\r
+                  .""\"_...   ""---\\.,_`"-._                    __,..._\r
+                 ,--   ""\"""\":--..    "-   `-._ _,.        ,-"" ..----'""\",\r
+                `---........_____ ._     `-._  `. |       / /'      '""\""-----.\r
+                \\"'""\"""\"''""\"'"-`           `-. `.      / j     .\\ |\\   -.,:,- .\r
+                 `-.......___     `._           \\  \\    ]\\ |   . |L ||/\\   `. ` .`.\r
+                         __,..==--'/ '           \\  L  A|,'|    \\| |||||  ` .`.. -._\r
+                    .--""          `.             L | j  /'"-.__\\V '/|||   | `. `._ `.\r
+                      `....----_..-`"`/.          | | | j   __ `._   | |'_`.\\  `.  `. |\r
+                            -"'       \\           | `_|.   l  `.  `.   |||   ` | `   \\'\r
+                            `-._,...-""\\-         |        |    .   /`.  \\  ..Y   `.  \\\r
+                               `-..,'  .`         '         L \\  .  `--"`.`.`|  .   \\  |\r
+                                  \\  ,'  `|     ,'          .\\ +-'-...-^._`. | |..  ,\\ '\r
+                                   `\\     `.._ j             /"       \\  |\\ `..- `.'- `\r
+                                    `. ,' | .  |           .'          \\ | `._`.\r
+                                      +   | | j           /             `'    `.`.\r
+                                       `.+._j_'      __..)                      `..\r
+                                        _,-'   .,   j ` .'""`--.                  `\r
+                                     _.' .-'  /,'`"-.  ,` .\\ \\` `\r
+                                   ,'  .' / /`,'    ||'` ,'`T|.`-|\r
+                                 ___,'/_,._/        L|   . |'-'\\"\r
+                                                    `-   ||    '\s""");
     }
 }
