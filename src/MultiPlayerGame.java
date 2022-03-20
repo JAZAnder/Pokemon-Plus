@@ -10,8 +10,8 @@ public class MultiPlayerGame {
     int playerTwoHealth = 100;
 
     public MultiPlayerGame(String name, String name2) {
-        playerOne = name.toString();
-        playerTwo = name2.toString();
+        playerOne = name;
+        playerTwo = name2;
     }
 
     public void beginTheGame() throws InterruptedException {
