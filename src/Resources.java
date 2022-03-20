@@ -1,5 +1,4 @@
 public class Resources {
-    int timeDelay;
     Resources(){
     }
 
@@ -8,7 +7,6 @@ public class Resources {
     }
 
     public void chooseDifficulty(int timeDelay) throws InterruptedException {
-        this.timeDelay = timeDelay;
         System.out.println("-------------------------------------------------------------------------------------------------------------------------------------------------");
         Thread.sleep(timeDelay);
         System.out.println("                    ______ _      _     __   __                ______ _  __  __ _            _   _ _         ");
