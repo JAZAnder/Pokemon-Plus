@@ -19,20 +19,14 @@ public class SinglePlayerGame {
     public void beginTheGame() throws InterruptedException {
         Game letsPlay = new Game(playerName, playerHealth, "Billy", opponentHealth);
 
-        resources.pickYourPokemonPlayerOnePicture(playerName,100);//Default Delay : 100
+        resources.pickYourPokemonPlayerOnePicture(playerName);//Default Delay : 100
         letsPlay.pickPlayerOnePokemon(input.next());
+        letsPlay.playerOneMoveList();
 
         //resources.pickYourPokemonPlayerTwoPicture(100);//Default Delay : 100
         letsPlay.pickPlayerTwoPokemon((int)(Math.random()*10)+1);
 
 
-
-        //Pick your Pokemon
-
-
-
-
-        //Random Enemy for Opponent
 
         //Pick your Move
 

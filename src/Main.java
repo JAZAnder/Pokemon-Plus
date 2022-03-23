@@ -4,7 +4,7 @@ public class Main {
         Scanner input = new Scanner(System.in);
         Resources resources = new Resources();
 
-        resources.intro(50); //Leave Blank for 750
+        resources.intro(100); //Leave Blank for 750
         System.out.print("Enter your Name : ");
         String name = input.next();
         System.out.print("Multiplayer (yes or no)? : ");
@@ -19,7 +19,7 @@ public class Main {
         else {
             //System.out.println("Single");
 
-            resources.chooseDifficulty(50); //Leave Blank for 500
+            resources.chooseDifficulty(100); //Leave Blank for 500
             System.out.print("Pick your Difficulty (Default is Medium) : ");
             String difficulty = input.next();
             SinglePlayerGame SPG;

@@ -250,6 +250,7 @@ public class Resources {
 
 
 
+
     public String charmanderPicture() {
         return   ("""
                               _.--""`-..                     \r
