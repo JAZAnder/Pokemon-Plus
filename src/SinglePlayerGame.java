@@ -8,6 +8,7 @@ public class SinglePlayerGame {
     String playerName;
     int playerHealth;
     int opponentHealth;
+    boolean playerTurn = true;
     public SinglePlayerGame(String name, int playerHealth, int opponentHealth) {
         playerName = name;
         this.playerHealth = playerHealth;
@@ -26,9 +27,21 @@ public class SinglePlayerGame {
         //resources.pickYourPokemonPlayerTwoPicture(100);//Default Delay : 100
         letsPlay.pickPlayerTwoPokemon((int)(Math.random()*10)+1);
 
+        Thread.sleep(1000);
+
+        resources.introSpeech();
+        while(!letsPlay.isGameOver()){
+            System.out.println(letsPlay.getPlayerTwoPokemonPicture());
+            System.out.println(letsPlay.getPlayerTwoHealthBar());
+            System.out.println(letsPlay.getPlayerOnePokemonPicture());
+            System.out.println(letsPlay.getPlayerOneHealthBar());
 
 
-        //Pick your Move
+
+
+
+
+    }
 
     }
 }

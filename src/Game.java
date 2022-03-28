@@ -12,6 +12,10 @@ public class Game {
     private String playerTwoMove1;
     private String playerTwoMove2;
     private String playerTwoMove3;
+    private String playerOnePokemonName;
+    private String playerOnePokemonPicture;
+    private String playerTwoPokemonName;
+    private String playerTwoPokemonPicture;
 
     Game(String playerOneName,int playerOneHealth, String playerTwoName, int playerTwoHealth){
         this.playerOneName = playerOneName;
@@ -27,6 +31,8 @@ public class Game {
             playerOneMove1 = "Ember";
             playerOneMove2 = "Growl";
             playerOneMove3 = "Scratch";
+            playerOnePokemonName = "Charmander";
+            playerOnePokemonPicture = resources.charmanderPicture();
 
         }
         else if((pokemonName.toLowerCase()).charAt(0) == 's'){
@@ -35,7 +41,8 @@ public class Game {
             playerOneMove1 = "Bubble";
             playerOneMove2 = "Water Gun";
             playerOneMove3 = "Tackle";
-
+            playerOnePokemonName = "Squirtle";
+            playerOnePokemonPicture = resources.squirtlePicture();
         }
         else if((pokemonName.toLowerCase()).charAt(0) == 'b'){
             System.out.println (resources.bulbasaurPicture());
@@ -43,6 +50,8 @@ public class Game {
             playerOneMove1 = "Vine Whip";
             playerOneMove2 = "Growth";
             playerOneMove3 = "Leech Seed";
+            playerOnePokemonName = "Bulbasaur";
+            playerOnePokemonPicture = resources.bulbasaurPicture();
 
         }
         else{
@@ -80,6 +89,8 @@ public class Game {
             playerTwoMove1 = "Charm";
             playerTwoMove2 = "Gyro Ball";
             playerTwoMove3 = "Play Rough";
+            playerTwoPokemonName = "Wigglypuff";
+            playerTwoPokemonPicture = resources.wigglypuffPicture();
 
         }
         else if((pokemonName.toLowerCase()).charAt(0) == 'n'){
@@ -90,6 +101,8 @@ public class Game {
             playerTwoMove1 = "Swift";
             playerTwoMove2 = "Sizzly Slide";
             playerTwoMove3 = "Shadow Ball";
+            playerTwoPokemonName = "Nidoqueen";
+            playerTwoPokemonPicture = resources.nidoqueenPicture();
 
         }
         else if((pokemonName.toLowerCase()).charAt(0) == 'f'){
@@ -100,6 +113,8 @@ public class Game {
             playerTwoMove1 = "Drill Run";
             playerTwoMove2 = "Peck";
             playerTwoMove3 = "Sky Attack";
+            playerTwoPokemonName = "Fearow";
+            playerTwoPokemonPicture = resources.fearowPicture();
 
         }
         else{
@@ -108,25 +123,26 @@ public class Game {
 
     }
 
-    private boolean isGameOver(){
-        return playerOneHealth<=0&&playerTwoHealth<=0;
+    public boolean isGameOver(){
+        return playerOneHealth<=0||playerTwoHealth<=0;
     }
 
     public void playerOneMoveList(){
-        System.out.println(("- - - - - - - - - - - - - - - - - - - - ".indent(107)));
-        System.out.println("First Move is "+ playerOneMove1 + " (Guaranteed to Hit)");
-        System.out.println("First Move is "+ playerOneMove2 + " (80% Chance to Hit)");
-        System.out.println("\t\t\t\t\tFirst Move is "+ playerOneMove3 + " (60% Chance to Hit) ");
-        System.out.println("a\t\tabc");
-        System.out.println("abc\t\tb");
+        System.out.println(("- - - - - - - - - - - - - - - - - - - - -".indent(107)));
+        System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tFirst Move is "+ playerOneMove1 + " \t\t(Guaranteed to Hit)");
+        System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tSecond Move is "+ playerOneMove2 + " \t\t(80% Chance to Hit)");
+        System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tThird Move is "+ playerOneMove3 + " \t\t(60% Chance to Hit) ");
+
 
     }
     public void playerTwoMoveList(){
-        System.out.println("- - - - - - - - - - - - - - - - ");
-        System.out.println("First Move is "+ playerTwoMove1 + " (Guaranteed to Hit)");
-        System.out.println("First Move is "+ playerTwoMove2 + " (80% Chance to Hit)");
-        System.out.println("First Move is "+ playerTwoMove3 + " (60% Chance to Hit)");
+        System.out.println("- - - - - - - - - - - - - - - - - - - - -");
+        System.out.println("First Move is "+ playerTwoMove1 + " \t\t(Guaranteed to Hit)");
+        System.out.println("Second Move is "+ playerTwoMove2 + " \t\t(80% Chance to Hit)");
+        System.out.println("Third Move is "+ playerTwoMove3 + " \t\t(60% Chance to Hit)");
     }
+
+
 
 //Getters and Setters
     public String getPlayerOneMove1() {
@@ -147,10 +163,26 @@ public class Game {
     public String getPlayerTwoMove3() {
         return playerTwoMove3;
     }
+    public String getPlayerOnePokemonName() {
+        return playerOnePokemonName;
+    }
+    public String getPlayerOnePokemonPicture() {
+        return playerOnePokemonPicture;
+    }
+    public String getPlayerTwoPokemonName() {
+        return playerTwoPokemonName;
+    }
+    public String getPlayerTwoPokemonPicture() {
+        return playerTwoPokemonPicture;
+    }
 
+    public String getPlayerTwoHealthBar() {
+        return "BOB";
+    }
 
-
-
+    public String getPlayerOneHealthBar() {
+        return "BOB";
+    }
 
 
 // Need Player Names, and Player Health

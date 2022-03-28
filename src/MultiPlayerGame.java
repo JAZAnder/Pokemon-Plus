@@ -27,5 +27,17 @@ public class MultiPlayerGame {
         resources.pickYourPokemonPlayerTwoPicture(playerTwo);//Leave Blank for 100
         letsPlay.pickPlayerTwoPokemon(input.next());
         letsPlay.playerTwoMoveList();
+
+        Thread.sleep(1000);
+
+        resources.introSpeech();
+        while(letsPlay.isGameOver()){
+
+
+
+
+
+
+        }
     }
 }

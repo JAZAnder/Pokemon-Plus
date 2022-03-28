@@ -250,6 +250,29 @@ public class Resources {
 
 
 
+    public void introSpeech() throws InterruptedException {
+        introSpeech(100);
+    }
+
+    public void introSpeech(int delay) throws InterruptedException {
+        System.out.println("\t\t\t\t\t_________        _______      _______ _______ _______ _______      ______  _______ _________________       _______ ");
+        Thread.sleep (delay);
+        System.out.println("\t\t\t\t\t\\__   __|\\     /(  ____ \\    (  ____ (  ___  (       (  ____ \\    (  ___ \\(  ____ (  ____ \\__   __( (    /(  ____ \\");
+        Thread.sleep (delay);
+        System.out.println("\t\t\t\t\t   ) (  | )   ( | (    \\/    | (    \\| (   ) | () () | (    \\/    | (   ) | (    \\| (    \\/  ) (  |  \\  ( | (    \\/");
+        Thread.sleep (delay);
+        System.out.println("\t\t\t\t\t   | |  | (___) | (__        | |     | (___) | || || | (__        | (__/ /| (__   | |        | |  |   \\ | | (_____ ");
+        Thread.sleep (delay);
+        System.out.println("\t\t\t\t\t   | |  |  ___  |  __)       | | ____|  ___  | |(_)| |  __)       |  __ ( |  __)  | | ____   | |  | (\\ \\) (_____  )");
+        Thread.sleep (delay);
+        System.out.println("\t\t\t\t\t   | |  | (   ) | (          | | \\_  | (   ) | |   | | (          | (  \\ \\| (     | | \\_  )  | |  | | \\   |     ) |");
+        Thread.sleep (delay);
+        System.out.println("\t\t\t\t\t   | |  | )   ( | (____/\\    | (___) | )   ( | )   ( | (____/\\    | )___) | (____/| (___) ___) (__| )  \\  /\\____) |");
+        Thread.sleep (delay);
+        System.out.println("\t\t\t\t\t   )_(  |/     \\(_______/    (_______|/     \\|/     \\(_______/    |/ \\___/(_______(_______\\_______|/    )_\\_______)");
+    }
+
+
 
     public String charmanderPicture() {
         return   ("""
@@ -463,4 +486,48 @@ public class Resources {
                                  ___,'/_,._/        L|   . |'-'\\"\r
                                                     `-   ||    '\s""");
     }
+
+    public String playerOneHealthBar20Percent(){
+        return("""  
+               | -------------------------------------------------- |      \r
+               | ==========                                         |  	    \r
+               | ==========                                         |      \r
+               | ==========                                         |      \r
+               | -------------------------------------------------- |      \r
+                """.indent(72));
+
+    }
+    public String playerOneHealthBar40Percent(){
+        return "BOB";
+    }
+    public String playerOneHealthBar60Percent(){
+        return "BOB";
+    }
+    public String playerOneHealthBar80Percent(){
+        return "BOB";
+    }
+    public String playerOneHealthBar100Percent(){
+        return "BOB";
+    }
+
+    public String playerTwoHealthBar20Percent(){
+        return "BOB";
+    }
+    public String playerTwoHealthBar40Percent(){
+        return "BOB";
+    }
+    public String playerTwoHealthBar60Percent(){
+        return "BOB";
+    }
+    public String playerTwoHealthBar80Percent(){
+        return "BOB";
+    }
+    public String playerTwoHealthBar100Percent(){
+        return "BOB";
+    }
+
+
+
+
+
 }
