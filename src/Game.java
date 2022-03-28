@@ -116,7 +116,7 @@ public class Game {
         System.out.println(("- - - - - - - - - - - - - - - - - - - - ".indent(107)));
         System.out.println("First Move is "+ playerOneMove1 + " (Guaranteed to Hit)");
         System.out.println("First Move is "+ playerOneMove2 + " (80% Chance to Hit)");
-        System.out.println("\t\t\t\t\tFirst Move is "+ playerOneMove3 + " (60% Chance to Hit)");
+        System.out.println("\t\t\t\t\tFirst Move is "+ playerOneMove3 + " (60% Chance to Hit) ");
         System.out.println("a\t\tabc");
         System.out.println("abc\t\tb");
 
