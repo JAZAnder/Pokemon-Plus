@@ -1,8 +1,8 @@
 public class Resources {
-    Resources(){
+    private Resources(){
     }
 
-    public void chooseDifficulty() throws InterruptedException{
+    public static void chooseDifficulty() throws InterruptedException{
         chooseDifficulty(500);
     }
 
@@ -78,11 +78,11 @@ public class Resources {
 
 
 
-    public void intro() throws InterruptedException{
+    public static void intro() throws InterruptedException{
         intro(750);
     }
 
-    public void intro(int timeDelay) throws InterruptedException{
+    public static void intro(int timeDelay) throws InterruptedException{
         System.out.println("-------------------------------------------------------------------------------------------------------------------------------------------------");
         Thread.sleep(timeDelay);
         System.out.println("                  ,'\\ ");

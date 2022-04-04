@@ -6,16 +6,21 @@ public class Game {
     int playerOneHealth;
     String playerTwoName;
     int playerTwoHealth;
+
     private String playerOneMove1;
     private String playerOneMove2;
     private String playerOneMove3;
+
     private String playerTwoMove1;
     private String playerTwoMove2;
     private String playerTwoMove3;
+
     private String playerOnePokemonName;
     private String playerOnePokemonPicture;
     private String playerTwoPokemonName;
     private String playerTwoPokemonPicture;
+
+
 
     Game(String playerOneName,int playerOneHealth, String playerTwoName, int playerTwoHealth){
         this.playerOneName = playerOneName;
@@ -24,6 +29,11 @@ public class Game {
         this.playerTwoHealth = playerTwoHealth;
     }
 
+    protected Game() {
+
+    }
+
+/*
     public void pickPlayerOnePokemon(String pokemonName) {
         if((pokemonName.toLowerCase()).charAt(0) == 'c'){
             System.out.println (resources.charmanderPicture());
@@ -61,7 +71,7 @@ public class Game {
 
 
     }
-
+*/
     public void pickPlayerTwoPokemon(String pokemonName) {
 
         pickPlayerTwoPokemon(pokemonName, true);

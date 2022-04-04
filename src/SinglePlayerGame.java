@@ -1,16 +1,19 @@
 import java.util.Scanner;
 import java.lang.Math;
 
-public class SinglePlayerGame {
+public class SinglePlayerGame extends Game{
     Resources resources = new Resources();
     Scanner input = new Scanner(System.in);
 
-    String playerName;
-    int playerHealth;
-    int opponentHealth;
+
     boolean playerTurn = true;
-    public SinglePlayerGame(String name, int playerHealth, int opponentHealth) {
-        playerName = name;
+    public SinglePlayerGame(String name, int playerHealth, int opponentHealth) throws InterruptedException {
+        super();
+        this.playerOneName = name;
+        resources.pickYourPokemonPlayerOnePicture(playerOneName);
+
+        Pokemon pokemonOne = new Pokemon(input.next(),playerHealth);
+
         this.playerHealth = playerHealth;
         this.opponentHealth = opponentHealth;
 
@@ -18,9 +21,9 @@ public class SinglePlayerGame {
 
 
     public void beginTheGame() throws InterruptedException {
-        Game letsPlay = new Game(playerName, playerHealth, "Billy", opponentHealth);
+        Game letsPlay = new Game(playerOneName, playerHealth, "Billy", opponentHealth);
 
-        resources.pickYourPokemonPlayerOnePicture(playerName);//Default Delay : 100
+        //resources.pickYourPokemonPlayerOnePicture(playerOneName);//Default Delay : 100
         letsPlay.pickPlayerOnePokemon(input.next());
         letsPlay.playerOneMoveList();
 

@@ -2,9 +2,9 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) throws InterruptedException {
         Scanner input = new Scanner(System.in);
-        Resources resources = new Resources();
+        //Resources resources = new Resources();
 
-        resources.intro(100); //Leave Blank for 750
+        Resources.intro(100); //Leave Blank for 750
         System.out.print("Enter your Name : ");
         String name = input.next();
         System.out.print("Multiplayer (yes or no)? : ");
