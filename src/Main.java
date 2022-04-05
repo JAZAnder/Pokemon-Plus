@@ -19,7 +19,7 @@ public class Main {
         else {
             //System.out.println("Single");
 
-            resources.chooseDifficulty(100); //Leave Blank for 500
+            Resources.chooseDifficulty(100); //Leave Blank for 500
             System.out.print("Pick your Difficulty (Default is Medium) : ");
             String difficulty = input.next();
             SinglePlayerGame SPG;

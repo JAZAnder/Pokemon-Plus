@@ -6,7 +6,7 @@ public class Resources {
         chooseDifficulty(500);
     }
 
-    public void chooseDifficulty(int timeDelay) throws InterruptedException {
+    public static void chooseDifficulty(int timeDelay) throws InterruptedException {
         System.out.println("-------------------------------------------------------------------------------------------------------------------------------------------------");
         Thread.sleep(timeDelay);
         System.out.println("                    ______ _      _     __   __                ______ _  __  __ _            _   _ _         ");
@@ -115,11 +115,11 @@ public class Resources {
 
 
 
-    public void pickYourPokemonPlayerOnePicture(String playerName) throws InterruptedException{
+    public static void pickYourPokemonPlayerOnePicture(String playerName) throws InterruptedException{
         pickYourPokemonPlayerOnePicture(playerName,100);
     }
 
-    public void pickYourPokemonPlayerOnePicture(String playerName, int timeDelay) throws InterruptedException{
+    public static void pickYourPokemonPlayerOnePicture(String playerName, int timeDelay) throws InterruptedException{
         System.out.println("Choose Your Pokemon");
         System.out.println("-------------------------------------------------------------------------------------------------------------------------------------------------");
         System.out.println("              _.--\"\"`-..                                                                                   _,........__                                                 ");
@@ -237,11 +237,11 @@ public class Resources {
 
 
 
-    public void pickYourPokemonPlayerTwoPicture(String playerName) throws InterruptedException{
+    public static void pickYourPokemonPlayerTwoPicture(String playerName) throws InterruptedException{
         pickYourPokemonPlayerTwoPicture(playerName,100);
     }
 
-    public void pickYourPokemonPlayerTwoPicture(String playerName, int timeDelay) throws InterruptedException{
+    public static void pickYourPokemonPlayerTwoPicture(String playerName, int timeDelay) throws InterruptedException{
         Thread.sleep(timeDelay);
         System.out.println("PLayer 2 // Opponent Picture");
         System.out.println("Wigglypuff - Nidoqueen - Fearow");
@@ -250,11 +250,11 @@ public class Resources {
 
 
 
-    public void introSpeech() throws InterruptedException {
+    public static void introSpeech() throws InterruptedException {
         introSpeech(100);
     }
 
-    public void introSpeech(int delay) throws InterruptedException {
+    public static void introSpeech(int delay) throws InterruptedException {
         System.out.println("\t\t\t\t\t_________        _______      _______ _______ _______ _______      ______  _______ _________________       _______ ");
         Thread.sleep (delay);
         System.out.println("\t\t\t\t\t\\__   __|\\     /(  ____ \\    (  ____ (  ___  (       (  ____ \\    (  ___ \\(  ____ (  ____ \\__   __( (    /(  ____ \\");
@@ -274,7 +274,7 @@ public class Resources {
 
 
 
-    public String charmanderPicture() {
+    public static String charmanderPicture() {
         return   ("""
                               _.--""`-..                     \r
                             ,'          `.                                                                     \r
@@ -312,7 +312,7 @@ public class Resources {
                                       \s""".indent(107));
     }
 
-    public String squirtlePicture(){
+    public static String squirtlePicture(){
         return ("""
                 _,........__                                \r
                                                              ,-'            "`-.                                                \r
@@ -351,7 +351,7 @@ public class Resources {
 
     }
 
-    public String bulbasaurPicture(){
+    public static String bulbasaurPicture(){
         return ("""
                 /\r
                                                                                                        _,.------....___,.' ',.-.\r
@@ -384,7 +384,7 @@ public class Resources {
 
     }
 
-    public String wigglypuffPicture(){
+    public static String wigglypuffPicture(){
         return ("""
                 ,-.                                                 .\r
                 .` `.                                             .'|\r
@@ -423,7 +423,7 @@ public class Resources {
                 f""");
     }
 
-    public String nidoqueenPicture(){
+    public static String nidoqueenPicture(){
         return ("""
                 \r
                                                           ."                            \r
@@ -461,7 +461,7 @@ public class Resources {
                 """);
     }
 
-    public String fearowPicture(){
+    public static String fearowPicture(){
         return ("""
                     ,---...__     ,.._\r
                   .""\"_...   ""---\\.,_`"-._                    __,..._\r
@@ -487,7 +487,7 @@ public class Resources {
                                                     `-   ||    '\s""");
     }
 
-    public String playerOneHealthBar20Percent(){
+    public static String playerOneHealthBar20Percent(){
         return("""  
                | -------------------------------------------------- |      \r
                | ==========                                         |  	    \r
@@ -497,32 +497,32 @@ public class Resources {
                 """.indent(72));
 
     }
-    public String playerOneHealthBar40Percent(){
+    public static String playerOneHealthBar40Percent(){
         return "BOB";
     }
-    public String playerOneHealthBar60Percent(){
+    public static String playerOneHealthBar60Percent(){
         return "BOB";
     }
-    public String playerOneHealthBar80Percent(){
+    public static String playerOneHealthBar80Percent(){
         return "BOB";
     }
-    public String playerOneHealthBar100Percent(){
+    public static String playerOneHealthBar100Percent(){
         return "BOB";
     }
 
-    public String playerTwoHealthBar20Percent(){
+    public static String playerTwoHealthBar20Percent(){
         return "BOB";
     }
-    public String playerTwoHealthBar40Percent(){
+    public static String playerTwoHealthBar40Percent(){
         return "BOB";
     }
-    public String playerTwoHealthBar60Percent(){
+    public static String playerTwoHealthBar60Percent(){
         return "BOB";
     }
-    public String playerTwoHealthBar80Percent(){
+    public static String playerTwoHealthBar80Percent(){
         return "BOB";
     }
-    public String playerTwoHealthBar100Percent(){
+    public static String playerTwoHealthBar100Percent(){
         return "BOB";
     }
 

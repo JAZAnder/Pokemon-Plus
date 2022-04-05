@@ -1,38 +1,35 @@
 import java.util.Scanner;
 
-public class MultiPlayerGame {
-    Resources resources = new Resources();
+public class MultiPlayerGame extends Game{
+
     Scanner input = new Scanner(System.in);
 
-    String playerOne;
-    String playerTwo;
-    int playerOneHealth = 100;
-    int playerTwoHealth = 100;
 
-    public MultiPlayerGame(String name, String name2) {
-        playerOne = name;
-        playerTwo = name2;
+    public MultiPlayerGame(String name, String name2) throws InterruptedException {
+        playerOneName = name;
+        playerTwoName = name2;
+
+        Resources.pickYourPokemonPlayerOnePicture(playerOneName);
+        pokemonOne = new Pokemon(input.next(),100);
+        playerOneMoveList();
+
+        Resources.pickYourPokemonPlayerTwoPicture(playerTwoName);
+        pokemonTwo = new Pokemon(input.next(),100);
+        playerTwoMoveList();
     }
+
 
     public void beginTheGame() throws InterruptedException {
 
-        Game letsPlay = new Game(playerOne, playerOneHealth, playerTwo, playerTwoHealth);
 
-        resources.pickYourPokemonPlayerOnePicture(playerOne);//Leave Blank for 100
-        letsPlay.pickPlayerOnePokemon(input.next());
-        letsPlay.playerOneMoveList();
 
-        Thread.sleep(1000);
+        Resources.introSpeech();
 
-        resources.pickYourPokemonPlayerTwoPicture(playerTwo);//Leave Blank for 100
-        letsPlay.pickPlayerTwoPokemon(input.next());
-        letsPlay.playerTwoMoveList();
-
-        Thread.sleep(1000);
-
-        resources.introSpeech();
-        while(letsPlay.isGameOver()){
-
+        while(isGameOver()){
+            System.out.println(pokemonTwo.getPicture());
+            System.out.println(getPlayerTwoHealthBar());
+            System.out.println(pokemonOne.getPicture());
+            System.out.println(getPlayerOneHealthBar());
 
 
 
