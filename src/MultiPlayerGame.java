@@ -10,31 +10,37 @@ public class MultiPlayerGame extends Game{
         playerTwoName = name2;
 
         Resources.pickYourPokemonPlayerOnePicture(playerOneName);
-        pokemonOne = new Pokemon(input.next(),100);
-        playerOneMoveList();
+        pokemonOne = new Pokemon(input.next(),100,1);
+        this.playerOneMoveList();
+        Thread.sleep(5000);
 
         Resources.pickYourPokemonPlayerTwoPicture(playerTwoName);
-        pokemonTwo = new Pokemon(input.next(),100);
+        pokemonTwo = new Pokemon(input.next(),100,2);
         playerTwoMoveList();
+        Thread.sleep(5000);
     }
 
 
     public void beginTheGame() throws InterruptedException {
 
 
-
         Resources.introSpeech();
 
-        while(isGameOver()){
-            System.out.println(pokemonTwo.getPicture());
-            System.out.println(getPlayerTwoHealthBar());
-            System.out.println(pokemonOne.getPicture());
-            System.out.println(getPlayerOneHealthBar());
-
-
-
-
-
+        while (pokemonOne.getHealth() > 0 && pokemonTwo.getHealth() > 0) {
+            if (pokemonOne.getHealth() > 0) {
+                battleScreen();
+                playerOneMoveList();
+                System.out.print(playerOneName+" pick Your Move : ");
+                pokemonTwo.takeDamage(pokemonOne.attack(input.next()));
+                Thread.sleep(5000);
+            }
+            if (pokemonTwo.getHealth() > 0) {
+                battleScreen();
+                playerTwoMoveList();
+                System.out.print(playerTwoName+" pick Your Move : ");
+                pokemonOne.takeDamage(pokemonTwo.attack(input.next()));
+                Thread.sleep(5000);
+            }
         }
     }
 }

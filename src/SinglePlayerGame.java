@@ -10,8 +10,9 @@ public class SinglePlayerGame extends Game{
         this.playerTwoName = "Opponent";
 
         Resources.pickYourPokemonPlayerOnePicture(playerOneName);
-        pokemonOne = new Pokemon(input.next(),playerHealth);
+        pokemonOne = new Pokemon(input.next(),playerHealth,1);
         playerOneMoveList();
+        Thread.sleep(5000);
 
         pokemonTwo = new Pokemon(opponentHealth);
 
@@ -23,12 +24,23 @@ public class SinglePlayerGame extends Game{
 
 
         Resources.introSpeech();
+        Thread.sleep(1000);
 
-        while(isGameOver()){
-            System.out.println(pokemonTwo.getPicture());
-            System.out.println(getPlayerTwoHealthBar());
-            System.out.println(pokemonOne.getPicture());
-            System.out.println(getPlayerOneHealthBar());
+        while(pokemonOne.getHealth()>0&&pokemonTwo.getHealth()>0){
+            if (pokemonOne.getHealth()>0){
+                battleScreen();
+                playerOneMoveList();
+                System.out.print(playerOneName+" pick Your Move : ");
+                pokemonTwo.takeDamage(pokemonOne.attack(input.next()));
+                Thread.sleep(1000);
+            }
+            if (pokemonTwo.getHealth() > 0) {
+                //battleScreen();
+                //playerTwoMoveList();
+
+                pokemonOne.takeDamage(pokemonTwo.attack((int) (Math.random()*3)));
+                Thread.sleep(5000);
+            }
 
 
 

@@ -9,11 +9,11 @@ public class Pokemon {
 
 
     //Constructors
-    Pokemon(String input, int health){
+    Pokemon(String input, int health, int playerNumber){
 
         this.health = health;
 
-        if((input.toLowerCase()).charAt(0) == 'c'){
+        if((input.toLowerCase()).charAt(0) == 'c'&&playerNumber==1){
             System.out.println (Resources.charmanderPicture());
 
             move1 = "Ember";
@@ -23,7 +23,7 @@ public class Pokemon {
             picture = Resources.charmanderPicture();
 
         }
-        else if((input.toLowerCase()).charAt(0) == 's'){
+        else if((input.toLowerCase()).charAt(0) == 's'&&playerNumber==1){
             System.out.println (Resources.squirtlePicture());
 
             move1 = "Bubble";
@@ -32,7 +32,7 @@ public class Pokemon {
             name = "Squirtle";
             picture = Resources.squirtlePicture();
         }
-        else if((input.toLowerCase()).charAt(0) == 'b'){
+        else if((input.toLowerCase()).charAt(0) == 'b'&&playerNumber==1){
             System.out.println (Resources.bulbasaurPicture());
 
             move1 = "Vine Whip";
@@ -42,7 +42,7 @@ public class Pokemon {
             picture = Resources.bulbasaurPicture();
 
         }
-        else if((input.toLowerCase()).charAt(0) == 'w'){
+        else if((input.toLowerCase()).charAt(0) == 'w'&&playerNumber==2){
             System.out.println(Resources.wigglypuffPicture());
 
             move1 = "Charm";
@@ -52,7 +52,7 @@ public class Pokemon {
             picture = Resources.wigglypuffPicture();
 
         }
-        else if((input.toLowerCase()).charAt(0) == 'n'){
+        else if((input.toLowerCase()).charAt(0) == 'n'&&playerNumber==2){
             System.out.println(Resources.nidoqueenPicture());
 
 
@@ -63,7 +63,7 @@ public class Pokemon {
             picture = Resources.nidoqueenPicture();
 
         }
-        else if((input.toLowerCase()).charAt(0) == 'f'){
+        else if((input.toLowerCase()).charAt(0) == 'f'&&playerNumber==2){
                 System.out.println(Resources.fearowPicture());
 
 
@@ -121,8 +121,52 @@ public class Pokemon {
     //Methods
     public void takeDamage(int damage){
         this.health = this.health - damage;
-    }
 
+        System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t"+name+" took "+damage+" damage\n"+
+                "\t\t\t\t\t\t\t\t\t\t\t\t\t\t"+name + " now has "+getHealth()+"HP\n"+
+                "\t\t\t\t\t\t\t\t\t\t\t\t - - - - - - - - - - - - - - - - -");
+    }
+    public int attack(int attack){
+        randomNumber = Math.random();
+        if(attack == 1){
+            System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t"+name+" used "+move1);
+            return 10;
+        }
+        else if(attack == 2&&randomNumber<.80){
+            System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t"+name+" used "+move2);
+            return 15;
+        }
+        else if(attack == 3&&randomNumber<.60){
+            System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t"+name+" used "+move3);
+            return 20;
+        }
+        else {
+            System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t"+name+" missed ");
+            return 0;
+        }
+    }
+    public int attack(String attack){
+        int i = 0;
+        while (move1.toLowerCase().charAt(i) == move2.toLowerCase().charAt(i)||
+                move1.toLowerCase().charAt(i)==move3.toLowerCase().charAt(i)||
+                move2.toLowerCase().charAt(i)==move3.toLowerCase().charAt(i)){
+
+            i++;
+        }
+        if((attack.toLowerCase()).charAt(i) == move1.toLowerCase().charAt(i)||attack.equals("1")){
+            return attack(1);
+        }
+        else if((attack.toLowerCase()).charAt(i) == move2.toLowerCase().charAt(i)||attack.equals("2")){
+            return attack(2);
+        }
+        else if((attack.toLowerCase()).charAt(i) == move3.toLowerCase().charAt(i)||attack.equals("3")) {
+            return attack(3);
+        }
+        else{
+         return attack(4);
+        }
+
+    }
 
 
     //Getters and Setters
@@ -145,7 +189,13 @@ public class Pokemon {
     }
 
     public int getHealth() {
-        return health;
+        if(health>0){
+            return health;
+        }
+        else{
+            return 0;
+        }
+
     }
 
     public String getPicture() {
