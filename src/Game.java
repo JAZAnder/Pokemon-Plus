@@ -35,10 +35,10 @@ public class Game {
     }
     protected void battleScreen() throws InterruptedException {
         System.out.println(pokemonTwo.getPicture());
-        System.out.println(getPlayerTwoHealthBar());
+        System.out.println(getHealthBar(pokemonTwo.getHealth()));
         Thread.sleep(1000);
         System.out.println(pokemonOne.getPicture());
-        System.out.println(getPlayerOneHealthBar());
+        System.out.println(getHealthBar(pokemonOne.getHealth()));
     }
 
 
@@ -47,12 +47,26 @@ public class Game {
 //Getters and Setters
 
 
-    public String getPlayerTwoHealthBar() {
-        return "BOB";
-    }
+    public String getHealthBar(int health) {
+        if(health>=100){
 
-    public String getPlayerOneHealthBar() {
-        return "BOB";
+        }
+        else if(health>=80){
+
+        }
+        else if(health>=60){
+
+        }
+        else if(health>=40){
+
+        }
+        else if(health>=20){
+
+        }
+        else if(health>=0){
+
+        }
+            return " ";
     }
 
 

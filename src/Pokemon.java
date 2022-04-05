@@ -76,7 +76,25 @@ public class Pokemon {
         }
 
 
-        else{
+        else if (playerNumber == 1) {
+            //Defaults for Player 1
+            System.out.println (Resources.charmanderPicture());
+
+            move1 = "Ember";
+            move2 = "Growl";
+            move3 = "Scratch";
+            name = "Charmander";
+            picture = Resources.charmanderPicture();
+
+        }
+        else if (playerNumber == 2) {
+            //Defaults for Player 2
+            System.out.println(Resources.wigglypuffPicture());
+            move1 = "Charm";
+            move2 = "Gyro Ball";
+            move3 = "Play Rough";
+            name = "Wigglypuff";
+            picture = Resources.wigglypuffPicture();
 
         }
         
@@ -147,12 +165,15 @@ public class Pokemon {
     }
     public int attack(String attack){
         int i = 0;
-        while (move1.toLowerCase().charAt(i) == move2.toLowerCase().charAt(i)||
-                move1.toLowerCase().charAt(i)==move3.toLowerCase().charAt(i)||
-                move2.toLowerCase().charAt(i)==move3.toLowerCase().charAt(i)){
+        if (attack.length() > 1) {
+            while (move1.toLowerCase().charAt(i) == move2.toLowerCase().charAt(i)||
+                    move1.toLowerCase().charAt(i)==move3.toLowerCase().charAt(i)||
+                    move2.toLowerCase().charAt(i)==move3.toLowerCase().charAt(i)){
 
-            i++;
+                i++;
+            }
         }
+
         if((attack.toLowerCase()).charAt(i) == move1.toLowerCase().charAt(i)||attack.equals("1")){
             return attack(1);
         }

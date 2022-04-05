@@ -1,6 +1,13 @@
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
 public class Resources {
     private Resources(){
+
     }
+
 
     public static void chooseDifficulty() throws InterruptedException{
         chooseDifficulty(500);
@@ -487,43 +494,70 @@ public class Resources {
                                                     `-   ||    '\s""");
     }
 
-    public static String playerOneHealthBar20Percent(){
-        return("""  
+    public static void playerOneHealthBar20Percent(){
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader("Assets/HealthBars.txt"));
+
+            String content = reader.readLine();
+
+
+
+            while (!content.equals("20")){
+                //System.out.println(content);
+                content = reader.readLine();
+            }
+            content = reader.readLine();
+
+            while(!content.equals("20")){
+                System.out.println(content);
+                content = reader.readLine();
+            }
+
+            //reader.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+/*
+        ("""
                | -------------------------------------------------- |      \r
                | ==========                                         |  	    \r
                | ==========                                         |      \r
                | ==========                                         |      \r
                | -------------------------------------------------- |      \r
-                """.indent(72));
+                """.indent(72))
+                */
 
     }
-    public static String playerOneHealthBar40Percent(){
-        return "BOB";
+    public static void playerOneHealthBar40Percent(){
+
     }
-    public static String playerOneHealthBar60Percent(){
-        return "BOB";
+    public static void playerOneHealthBar60Percent(){
+
     }
-    public static String playerOneHealthBar80Percent(){
-        return "BOB";
+    public static void playerOneHealthBar80Percent(){
+
     }
-    public static String playerOneHealthBar100Percent(){
-        return "BOB";
+    public static void playerOneHealthBar100Percent(){
+
     }
 
-    public static String playerTwoHealthBar20Percent(){
-        return "BOB";
+    public static void playerTwoHealthBar20Percent(){
+
     }
-    public static String playerTwoHealthBar40Percent(){
-        return "BOB";
+    public static void playerTwoHealthBar40Percent(){
+
     }
-    public static String playerTwoHealthBar60Percent(){
-        return "BOB";
+    public static void playerTwoHealthBar60Percent(){
+
     }
-    public static String playerTwoHealthBar80Percent(){
-        return "BOB";
+    public static void playerTwoHealthBar80Percent(){
+
     }
-    public static String playerTwoHealthBar100Percent(){
-        return "BOB";
+    public static void playerTwoHealthBar100Percent(){
+
     }
 
 
