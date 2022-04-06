@@ -11,6 +11,7 @@ public class Main {
         System.out.print("Multiplayer (yes or no)? : ");
 
 
+
         if((input.next()).equalsIgnoreCase("yes")){
             System.out.print("Enter Player 2 Name : ");
             String name2 = input.next();

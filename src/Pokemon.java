@@ -10,93 +10,110 @@ public class Pokemon {
     private double randomNumber;
 
 
-//Constructors
+    //Constructors
     Pokemon(String input, int health, int playerNumber){
+
+        String side;
+        if(playerNumber == 1){
+            side = "Right";
+        }
+        else{
+            side = "Left";
+        }
+
 
         this.health = health;
 
         if((input.toLowerCase()).charAt(0) == 'c'&&playerNumber==1){
-            System.out.println (Resources.charmanderPicture());
+
 
             move1 = "Ember";
             move2 = "Growl";
             move3 = "Scratch";
             name = "Charmander";
-            picture = Resources.charmanderPicture();
 
+            picture = Resources.getPicture(name, side);
+            System.out.println(picture);
         }
         else if((input.toLowerCase()).charAt(0) == 's'&&playerNumber==1){
-            System.out.println (Resources.squirtlePicture());
 
             move1 = "Bubble";
             move2 = "Water Gun";
             move3 = "Tackle";
             name = "Squirtle";
-            picture = Resources.squirtlePicture();
+
+            picture = Resources.getPicture(name, side);
+            System.out.println(picture);
         }
         else if((input.toLowerCase()).charAt(0) == 'b'&&playerNumber==1){
-            System.out.println (Resources.bulbasaurPicture());
+
 
             move1 = "Vine Whip";
             move2 = "Growth";
             move3 = "Leech Seed";
             name = "Bulbasaur";
-            picture = Resources.bulbasaurPicture();
+
+            picture = Resources.getPicture(name, side);
+            System.out.println(picture);
 
         }
         else if((input.toLowerCase()).charAt(0) == 'w'&&playerNumber==2){
-            System.out.println(Resources.wigglypuffPicture());
 
             move1 = "Charm";
             move2 = "Gyro Ball";
             move3 = "Play Rough";
             name = "Wigglypuff";
-            picture = Resources.wigglypuffPicture();
+
+            picture = Resources.getPicture(name, side);
+            System.out.println(picture);
 
         }
         else if((input.toLowerCase()).charAt(0) == 'n'&&playerNumber==2){
-            System.out.println(Resources.nidoqueenPicture());
+
 
 
             move1 = "Swift";
             move2 = "Sizzly Slide";
             move3 = "Shadow Ball";
             name = "Nidoqueen";
-            picture = Resources.nidoqueenPicture();
+
+            picture = Resources.getPicture(name, side);
+            System.out.println(picture);
 
         }
         else if((input.toLowerCase()).charAt(0) == 'f'&&playerNumber==2){
-                System.out.println(Resources.fearowPicture());
+
 
 
             move1 = "Drill Run";
             move2 = "Peck";
             move3 = "Sky Attack";
             name = "Fearow";
-            picture = Resources.fearowPicture();
+            picture = Resources.getPicture(name, side);
+            System.out.println(picture);
 
         }
 
 
         else if (playerNumber == 1) {
             //Defaults for Player 1
-            System.out.println (Resources.charmanderPicture());
-
             move1 = "Ember";
             move2 = "Growl";
             move3 = "Scratch";
             name = "Charmander";
-            picture = Resources.charmanderPicture();
 
+            picture = Resources.getPicture(name, side);
+            System.out.println(picture);
         }
         else if (playerNumber == 2) {
             //Defaults for Player 2
-            System.out.println(Resources.wigglypuffPicture());
+
             move1 = "Charm";
             move2 = "Gyro Ball";
             move3 = "Play Rough";
             name = "Wigglypuff";
-            picture = Resources.wigglypuffPicture();
+            picture = Resources.getPicture(name, side);
+            System.out.println(picture);
 
         }
         
@@ -116,7 +133,9 @@ public class Pokemon {
             move2 = "Gyro Ball";
             move3 = "Play Rough";
             name = "Wigglypuff";
-            picture = Resources.wigglypuffPicture();
+
+            picture = Resources.getPicture(name, "Left");
+            System.out.println(picture);
 
 
         }
@@ -125,15 +144,19 @@ public class Pokemon {
             move2 = "Sizzly Slide";
             move3 = "Shadow Ball";
             name = "Nidoqueen";
-            picture = Resources.nidoqueenPicture();
+
+            picture = Resources.getPicture(name, "Left");
+            System.out.println(picture);
 
         }
         else{
+
             move1 = "Drill Run";
             move2 = "Peck";
             move3 = "Sky Attack";
             name = "Fearow";
-            picture = Resources.fearowPicture();
+            picture = Resources.getPicture(name, "Left");
+            System.out.println(picture);
         }
 
     }
