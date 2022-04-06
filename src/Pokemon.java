@@ -1,4 +1,6 @@
 public class Pokemon {
+
+//Variables
     String name;
     private String move1;
     private String move2;
@@ -8,7 +10,7 @@ public class Pokemon {
     private double randomNumber;
 
 
-    //Constructors
+//Constructors
     Pokemon(String input, int health, int playerNumber){
 
         this.health = health;
@@ -136,7 +138,7 @@ public class Pokemon {
 
     }
 
-    //Methods
+//Methods
     public void takeDamage(int damage){
         this.health = this.health - damage;
 
@@ -190,7 +192,7 @@ public class Pokemon {
     }
 
 
-    //Getters and Setters
+//Getters and Setters
 
 
     public String getName() {

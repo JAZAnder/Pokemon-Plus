@@ -1,17 +1,17 @@
 import java.util.Scanner;
 
 public class SinglePlayerGame extends Game{
+//Variables
 
-    Scanner input = new Scanner(System.in);
 
-
+//Constructors
     public SinglePlayerGame(String name, int playerHealth, int opponentHealth) throws InterruptedException {
         this.playerOneName = name;
         this.playerTwoName = "Opponent";
 
         Resources.pickYourPokemonPlayerOnePicture(playerOneName);
         pokemonOne = new Pokemon(input.next(),playerHealth,1);
-        playerOneMoveList();
+        rightMoveList(pokemonOne);
         Thread.sleep(5000);
 
         pokemonTwo = new Pokemon(opponentHealth);
@@ -19,7 +19,7 @@ public class SinglePlayerGame extends Game{
 
     }
 
-
+//Methods
     public void beginTheGame() throws InterruptedException {
 
 
@@ -29,9 +29,11 @@ public class SinglePlayerGame extends Game{
         while(pokemonOne.getHealth()>0&&pokemonTwo.getHealth()>0){
             if (pokemonOne.getHealth()>0){
                 battleScreen();
-                playerOneMoveList();
+                moveList(pokemonOne);
                 System.out.print(playerOneName+" pick Your Move : ");
-                pokemonTwo.takeDamage(pokemonOne.attack(input.next()));
+                currentAttack = input.next();
+                System.out.println("\n\n-------------------------------------------------------------------------------------------------------------------------------------------------");
+                pokemonTwo.takeDamage(pokemonOne.attack(currentAttack));
                 Thread.sleep(1000);
             }
             if (pokemonTwo.getHealth() > 0) {
@@ -42,12 +44,9 @@ public class SinglePlayerGame extends Game{
                 Thread.sleep(5000);
             }
 
-
-
-
-
-
     }
 
     }
+
+//Setters and Getters
 }

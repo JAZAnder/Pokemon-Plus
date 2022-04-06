@@ -262,21 +262,22 @@ public class Resources {
     }
 
     public static void introSpeech(int delay) throws InterruptedException {
-        System.out.println("\t\t\t\t\t_________        _______      _______ _______ _______ _______      ______  _______ _________________       _______ ");
-        Thread.sleep (delay);
-        System.out.println("\t\t\t\t\t\\__   __|\\     /(  ____ \\    (  ____ (  ___  (       (  ____ \\    (  ___ \\(  ____ (  ____ \\__   __( (    /(  ____ \\");
-        Thread.sleep (delay);
-        System.out.println("\t\t\t\t\t   ) (  | )   ( | (    \\/    | (    \\| (   ) | () () | (    \\/    | (   ) | (    \\| (    \\/  ) (  |  \\  ( | (    \\/");
-        Thread.sleep (delay);
-        System.out.println("\t\t\t\t\t   | |  | (___) | (__        | |     | (___) | || || | (__        | (__/ /| (__   | |        | |  |   \\ | | (_____ ");
-        Thread.sleep (delay);
-        System.out.println("\t\t\t\t\t   | |  |  ___  |  __)       | | ____|  ___  | |(_)| |  __)       |  __ ( |  __)  | | ____   | |  | (\\ \\) (_____  )");
-        Thread.sleep (delay);
-        System.out.println("\t\t\t\t\t   | |  | (   ) | (          | | \\_  | (   ) | |   | | (          | (  \\ \\| (     | | \\_  )  | |  | | \\   |     ) |");
-        Thread.sleep (delay);
-        System.out.println("\t\t\t\t\t   | |  | )   ( | (____/\\    | (___) | )   ( | )   ( | (____/\\    | )___) | (____/| (___) ___) (__| )  \\  /\\____) |");
-        Thread.sleep (delay);
-        System.out.println("\t\t\t\t\t   )_(  |/     \\(_______/    (_______|/     \\|/     \\(_______/    |/ \\___/(_______(_______\\_______|/    )_\\_______)");
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader("Assets/IntroductionSpeech.txt"));
+            String content = reader.readLine();
+            System.out.println("\n");
+
+            while (content != null){
+                System.out.println(content);
+                content = reader.readLine();
+                Thread.sleep(delay);
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
     }
 
 
@@ -494,72 +495,74 @@ public class Resources {
                                                     `-   ||    '\s""");
     }
 
-    public static void playerOneHealthBar20Percent(){
+    public static void healthBar(int health) {
         try {
             BufferedReader reader = new BufferedReader(new FileReader("Assets/HealthBars.txt"));
 
             String content = reader.readLine();
 
-
-
-            while (!content.equals("20")){
-                //System.out.println(content);
+            if (health >= 80) {
+                while (!content.equals("80")) {
+                    //System.out.println(content);
+                    content = reader.readLine();
+                }
                 content = reader.readLine();
-            }
-            content = reader.readLine();
 
-            while(!content.equals("20")){
-                System.out.println(content);
+                while (!content.equals("80")) {
+                    System.out.println(content);
+                    content = reader.readLine();
+                }
+            } else if (health >= 60) {
+                while (!content.equals("60")) {
+                    //System.out.println(content);
+                    content = reader.readLine();
+                }
                 content = reader.readLine();
+
+                while (!content.equals("60")) {
+                    System.out.println(content);
+                    content = reader.readLine();
+                }
+            } else if (health >= 40) {
+                while (!content.equals("40")) {
+                    //System.out.println(content);
+                    content = reader.readLine();
+                }
+                content = reader.readLine();
+
+                while (!content.equals("40")) {
+                    System.out.println(content);
+                    content = reader.readLine();
+                }
+            } else if (health >= 20) {
+                while (!content.equals("20")) {
+                    //System.out.println(content);
+                    content = reader.readLine();
+                }
+                content = reader.readLine();
+
+                while (!content.equals("20")) {
+                    System.out.println(content);
+                    content = reader.readLine();
+                }
+
+            } else {
+                while (!content.equals("0")) {
+                    //System.out.println(content);
+                    content = reader.readLine();
+                }
+                content = reader.readLine();
+
+                while (!content.equals("0")) {
+                    System.out.println(content);
+                    content = reader.readLine();
+                }
             }
-
-            //reader.close();
-
+            reader.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
-/*
-        ("""
-               | -------------------------------------------------- |      \r
-               | ==========                                         |  	    \r
-               | ==========                                         |      \r
-               | ==========                                         |      \r
-               | -------------------------------------------------- |      \r
-                """.indent(72))
-                */
-
     }
-    public static void playerOneHealthBar40Percent(){
-
-    }
-    public static void playerOneHealthBar60Percent(){
-
-    }
-    public static void playerOneHealthBar80Percent(){
-
-    }
-    public static void playerOneHealthBar100Percent(){
-
-    }
-
-    public static void playerTwoHealthBar20Percent(){
-
-    }
-    public static void playerTwoHealthBar40Percent(){
-
-    }
-    public static void playerTwoHealthBar60Percent(){
-
-    }
-    public static void playerTwoHealthBar80Percent(){
-
-    }
-    public static void playerTwoHealthBar100Percent(){
-
-    }
-
 
 
 

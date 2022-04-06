@@ -1,16 +1,15 @@
 import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) throws InterruptedException {
         Scanner input = new Scanner(System.in);
-        //Resources resources = new Resources();
+
 
         Resources.intro(100); //Leave Blank for 750
         System.out.print("Enter your Name : ");
         String name = input.next();
         System.out.print("Multiplayer (yes or no)? : ");
 
-
-        //Resources.playerOneHealthBar20Percent();
 
         if((input.next()).equalsIgnoreCase("yes")){
             System.out.print("Enter Player 2 Name : ");
@@ -21,7 +20,7 @@ public class Main {
 
         }
         else {
-            System.out.println("Single");
+            //System.out.println("Single");
 
             Resources.chooseDifficulty(100); //Leave Blank for 500
             System.out.print("Pick your Difficulty (Default is Medium) : ");
