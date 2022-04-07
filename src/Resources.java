@@ -90,6 +90,22 @@ public class Resources {
     }
 
     public static void intro(int timeDelay) throws InterruptedException{
+        try{
+            BufferedReader reader = new BufferedReader(new FileReader("Assets/Transitions/PokemonIntro.txt"));
+
+            String content = reader.readLine();
+
+            while (content != null){
+                System.out.println(content);
+                Thread.sleep(timeDelay);
+                content = reader.readLine();
+        }
+
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+
+       /*
         System.out.println("-------------------------------------------------------------------------------------------------------------------------------------------------");
         Thread.sleep(timeDelay);
         System.out.println("                  ,'\\ ");
@@ -117,7 +133,7 @@ public class Resources {
         System.out.println("                                              `'                            '-._|");
         Thread.sleep(timeDelay);
         System.out.println("-------------------------------------------------------------------------------------------------------------------------------------------------");
-
+*/
     }
 
 
