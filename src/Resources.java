@@ -128,7 +128,7 @@ public class Resources {
 
     public static void pickYourPokemonPlayerOnePicture(String playerName, int timeDelay) throws InterruptedException{
         try {
-            BufferedReader reader = new BufferedReader(new FileReader("Assets/PlayerOneAllPokemon.txt"));
+            BufferedReader reader = new BufferedReader(new FileReader("Assets/Transitions/PlayerOneAllPokemon.txt"));
 
             String content = reader.readLine();
 
@@ -155,7 +155,7 @@ public class Resources {
     public static void pickYourPokemonPlayerTwoPicture(String playerName, int timeDelay) throws InterruptedException{
 
         try {
-            BufferedReader reader = new BufferedReader(new FileReader("Assets/PlayerTwoAllPokemon.txt"));
+            BufferedReader reader = new BufferedReader(new FileReader("Assets/Transitions/PlayerTwoAllPokemon.txt"));
 
             String content = reader.readLine();
 
@@ -181,7 +181,7 @@ public class Resources {
 
     public static void introSpeech(int delay) throws InterruptedException {
         try {
-            BufferedReader reader = new BufferedReader(new FileReader("Assets/IntroductionSpeech.txt"));
+            BufferedReader reader = new BufferedReader(new FileReader("Assets/Transitions/IntroductionSpeech.txt"));
             String content = reader.readLine();
             System.out.println("\n");
 
