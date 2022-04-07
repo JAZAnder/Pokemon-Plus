@@ -1,4 +1,5 @@
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -126,119 +127,23 @@ public class Resources {
     }
 
     public static void pickYourPokemonPlayerOnePicture(String playerName, int timeDelay) throws InterruptedException{
-        System.out.println("Choose Your Pokemon");
-        System.out.println("-------------------------------------------------------------------------------------------------------------------------------------------------");
-        System.out.println("              _.--\"\"`-..                                                                                   _,........__                                                 ");
-        Thread.sleep(timeDelay);
-        System.out.println("            ,'          `.                                                                             ,-'            \"`-.                                              ");
-        Thread.sleep(timeDelay);
-        System.out.println("          ,'          __  `.                                                                          ,'                   `-.                                          ");
-        Thread.sleep(timeDelay);
-        System.out.println("         /|          \" __   \\                                                                       ,'                        \\                                         ");
-        Thread.sleep(timeDelay);
-        System.out.println("        , |           / |.   .                                                                    ,'                           .                                        ");
-        Thread.sleep(timeDelay);
-        System.out.println("        |,'          !_.'|   |                                                                    .'\\               ,\"\".       `                                        ");
-        Thread.sleep(timeDelay);
-        System.out.println("      ,'             '   |   |                                                                   ._.'|             / |  `       \\                                       ");
-        Thread.sleep(timeDelay);
-        System.out.println("     /              |`--'|   |                                                                   |   |            `-.'  ||       `.                                     ");
-        Thread.sleep(timeDelay);
-        System.out.println("    |                `---'   |                                                                   |   |            '-._,'||       | \\                                    ");
-        Thread.sleep(timeDelay);
-        System.out.println("     .   ,                   |                       ,\".                                         .`.,'             `..,'.'       , |`-.                                 ");
-        Thread.sleep(timeDelay);
-        System.out.println("      ._     '           _'  |                    , ' \\ `                                        l                       .'`.  _/  |   `.                               ");
-        Thread.sleep(timeDelay);
-        System.out.println("  `.. `.`-...___,...---\"\"    |       __,.        ,`\"   L,|                                       `-.._'-   ,          _ _'   -\" \\  .     `                              ");
-        Thread.sleep(timeDelay);
-        System.out.println("  |, `- .`._        _,-,.'   .  __.-'-. /        .   ,    \\                                 `.\"\"\"\"\"'-.`-...,---------','         `. `....__.                            ");
-        Thread.sleep(timeDelay);
-        System.out.println("-:..     `. `-..--_.,.<       `\"      / `.        `-/ |   .                                 .'        `\"-..___      __,'\\          \\  \\     \\                           ");
-        Thread.sleep(timeDelay);
-        System.out.println("  `,         \"\"\"\"'     `.              ,'         |   |  ',,                                \\_ .          |   `\"\"\"\"'    `.           . \\     \\                          ");
-        Thread.sleep(timeDelay);
-        System.out.println("    `.      '            '            /          '    |'. |/                                   `.          |              `.          |  .     L                        ");
-        Thread.sleep(timeDelay);
-        System.out.println("    `.      '            '            /          '    |'. |/                                   `.          |              `.          |  .     L                        ");
-        Thread.sleep(timeDelay);
-        System.out.println("        `._'               \\   '\"\\                .      |                                         `._    .'      |          `.     .|   ,     |                        ");
-        Thread.sleep(timeDelay);
-        System.out.println("           |                '     \\                `._  ,'                                            `--,\\       .            `7\"\"' |  ,      |                        ");
-        Thread.sleep(timeDelay);
-        System.out.println("           |                 '     \\                 .'|                                                 ` `      `            /     |  |      |    _,-'\"\"\"`-.          ");
-        Thread.sleep(timeDelay);
-        System.out.println("           |                 .      \\                | |                                                  \\ `.     .          /      |  '      |  ,'          `.        ");
-        Thread.sleep(timeDelay);
-        System.out.println("           |                 |       L              ,' |                                                   \\  v.__  .        '       .   \\    /| /              \\      ");
-        Thread.sleep(timeDelay);
-        System.out.println("           `                 |       |             /   '                                                    \\/    `\"\"\\\"\"\"\"\"\"\"`.       \\   \\  /.''                |     ");
-        Thread.sleep(timeDelay);
-        System.out.println("            \\                |       |           ,'   /                                                      `        .        `._ ___,j.  `/ .-       ,---.     |     ");
-        Thread.sleep(timeDelay);
-        System.out.println("          ,' \\               |  _.._ ,-..___,..-'    ,'                                            /         ,`-.      \\         .\"     `.  |/        j     `    |     ");
-        Thread.sleep(timeDelay);
-        System.out.println("         /     .             .      `!             ,j'                                              /       /    `.     \\       /         \\ /         |     /    j     ");
-        Thread.sleep(timeDelay);
-        System.out.println("        /       `.          /        .           .'/                       _,.------....___,.' ',.-.       |       `-.   7-.._ .          |\"          '         /      ");
-        Thread.sleep(timeDelay);
-        System.out.println("       .          `.       /         |        _.'.'                     ,-'          _,.--\"        |       |          `./_    `|          |            .     _,'       ");
-        Thread.sleep(timeDelay);
-        System.out.println("        `.          7`'---'          |------\"'_.'                     ,'         _.-'              .       `.           / `----|          |-............`---'          ");
-        Thread.sleep(timeDelay);
-        System.out.println("       _,.`,_     _'                ,''-----\"'                       /   ,     ,'                   `        \\          \\      |          |                            ");
-        Thread.sleep(timeDelay);
-        System.out.println("   _,-_    '       `.     .'      ,\\                                .   /     /                     ``.     ,'           )     `.         |                            ");
-        Thread.sleep(timeDelay);
-        System.out.println("   -\" /`.         _,'     | _  _  _.|                               |  |     .                       \\.\\     7____,,..--'      /          |                            ");
-        Thread.sleep(timeDelay);
-        System.out.println("    \"\"--'---\"\"\"\"\"'        `' '! |! /                      ____      |___._.  |       __               \\ `.                     `---.__,--.'                            ");
-        Thread.sleep(timeDelay);
-        System.out.println("                            `\" \" -'                     .'    `---\"\"       ``\"-.--\"'`  \\               .  \\                                                            ");
-        Thread.sleep(timeDelay);
-        System.out.println("                                                    .  ,            __               `              |   .                                                              ");
-        Thread.sleep(timeDelay);
-        System.out.println("                                                  `,'         ,-\"'  .               \\             |    L                                                               ");
-        Thread.sleep(timeDelay);
-        System.out.println("                                                  ,'          '    _.'                -._          /    |                                                              ");
-        Thread.sleep(timeDelay);
-        System.out.println("                                                 ,`-.    ,\".   `--'                      >.      ,'     |                                                              ");
-        Thread.sleep(timeDelay);
-        System.out.println("                                               . .'\\'   `-'       __    ,  ,-.         /  `.__.-      ,'                                                               ");
-        Thread.sleep(timeDelay);
-        System.out.println("                                               ||:, .           ,'  ;  /  / \\ `        `.    .      .'/                                                                ");
-        Thread.sleep(timeDelay);
-        System.out.println("                                                j|:D  \\          `--'  ' ,'_  . .         `.__, \\   , /                                                                ");
-        Thread.sleep(timeDelay);
-        System.out.println("                                             / L:_  |                 .  \"' :_;                `.'.'                                                                   ");
-        Thread.sleep(timeDelay);
-        System.out.println("                                              .    \"\"'                  \"\"\"\"\"'                    V                                                                    ");
-        Thread.sleep(timeDelay);
-        System.out.println("                                              `.                                 .    `.   _,..  `                                                                     ");
-        Thread.sleep(timeDelay);
-        System.out.println("                                                `,_   .    .                _,-'/    .. `,'   __  `                                                                    ");
-        Thread.sleep(timeDelay);
-        System.out.println("                                                  ) \\`._        ___....----\"'  ,'   .'  \\ |   '  \\  .                                                                  ");
-        Thread.sleep(timeDelay);
-        System.out.println("                                                /   `. \"`-.--\"'         _,' ,'     `---' |    `./  |                                                                   ");
-        Thread.sleep(timeDelay);
-        System.out.println("                                               .   _  `\"\"'--.._____..--\"   ,             '         |                                                                   ");
-        Thread.sleep(timeDelay);
-        System.out.println("                                               | .\" `. `-.                /-.           /          ,                                                                   ");
-        Thread.sleep(timeDelay);
-        System.out.println("                                               | `._.'    `,_            ;  /         ,'          .                                                                    ");
-        Thread.sleep(timeDelay);
-        System.out.println("                                                .'          /| `-.        . ,'         ,           ,                                                                   ");
-        Thread.sleep(timeDelay);
-        System.out.println("                                                '-.__ __ _,','    '`-..___;-...__   ,.'\\ ____.___.'                                                                    ");
-        Thread.sleep(timeDelay);
-        System.out.println("                                               `\"^--'..'   '-`-^-'\"--    `-^-'`.''\"\"\"\"\"`.,^.`.--'                                                                      ");
-        Thread.sleep(timeDelay);
-        System.out.println(" ");
-        System.out.println("-------------------------------------------------------------------------------------------------------------------------------------------------");
-        System.out.println("                      Charmander                                                                             Squirtle                  ");
-        System.out.println("                                                                  Bulbasaur                                                     ");
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader("Assets/PlayerOneAllPokemon.txt"));
+
+            String content = reader.readLine();
+
+            while (content != null){
+                System.out.println(content);
+                Thread.sleep(timeDelay);
+                content = reader.readLine();
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         System.out.print("                              "+playerName+" Choose Your Pokemon :   ");
+
     }
 
 
@@ -248,10 +153,24 @@ public class Resources {
     }
 
     public static void pickYourPokemonPlayerTwoPicture(String playerName, int timeDelay) throws InterruptedException{
-        Thread.sleep(timeDelay);
-        System.out.println("PLayer 2 // Opponent Picture");
-        System.out.println("Wigglypuff - Nidoqueen - Fearow");
-        System.out.println(playerName + " choose your Pokemon");
+
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader("Assets/PlayerTwoAllPokemon.txt"));
+
+            String content = reader.readLine();
+
+            while (content != null){
+                System.out.println(content);
+                Thread.sleep(timeDelay);
+                content = reader.readLine();
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+        System.out.print("                              "+playerName+" Choose Your Pokemon :   ");
     }
 
 
@@ -300,7 +219,6 @@ public class Resources {
         }
         return "";
     }
-
 
 
     public static void healthBar(int health) {

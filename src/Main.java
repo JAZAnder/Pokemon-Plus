@@ -5,7 +5,7 @@ public class Main {
         Scanner input = new Scanner(System.in);
 
 
-        Resources.intro(100); //Leave Blank for 750
+        Resources.intro(); //Leave Blank for 750
         System.out.print("Enter your Name : ");
         String name = input.next();
         System.out.print("Multiplayer (yes or no)? : ");
