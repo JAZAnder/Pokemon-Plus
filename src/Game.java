@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Game {
 
 
@@ -6,6 +8,8 @@ public class Game {
     String playerTwoName;
     Pokemon pokemonOne;
     Pokemon pokemonTwo;
+    String currentAttack;
+    Scanner input = new Scanner(System.in);
 
 
 
@@ -16,29 +20,42 @@ public class Game {
 
 //Methods
 
-    protected boolean isGameOver(){
-        return pokemonOne.getHealth()<=0||pokemonTwo.getHealth()<=0;
-    }
-    protected void playerOneMoveList(){
+
+    protected void rightMoveList(Pokemon pokemon){
         System.out.println(("- - - - - - - - - - - - - - - - - - - - -".indent(107)));
-        System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tFirst Move is "+ pokemonOne.getMove1() + " \t\t(Guaranteed to Hit)");
-        System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tSecond Move is "+ pokemonOne.getMove2() + " \t\t(80% Chance to Hit)");
-        System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tThird Move is "+ pokemonOne.getMove3() + " \t\t(60% Chance to Hit) ");
+        System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tFirst Move is "+ pokemon.getMove1() + " \t\t(Guaranteed to Hit)");
+        System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tSecond Move is "+ pokemon.getMove2() + " \t\t(80% Chance to Hit)");
+        System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tThird Move is "+ pokemon.getMove3() + " \t\t(60% Chance to Hit) ");
 
 
     }
-    protected void playerTwoMoveList(){
+    protected void moveList(Pokemon pokemon){
+        System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
+        System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\tFirst Move is "+ pokemon.getMove1() + " (10HP) \t\t(Guaranteed to Hit)");
+        System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\tSecond Move is "+ pokemon.getMove2() + " (15HP) \t\t(80% Chance to Hit)");
+        System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\tThird Move is "+ pokemon.getMove3() + " (20HP) \t\t(60% Chance to Hit) ");
+
+
+    }
+    protected void leftMoveList(Pokemon pokemon){
         System.out.println("- - - - - - - - - - - - - - - - - - - - -");
-        System.out.println("First Move is "+ pokemonTwo.getMove1() + " \t\t(Guaranteed to Hit)");
-        System.out.println("Second Move is "+ pokemonTwo.getMove2() + " \t\t(80% Chance to Hit)");
-        System.out.println("Third Move is "+ pokemonTwo.getMove3() + " \t\t(60% Chance to Hit)");
+        System.out.println("First Move is "+ pokemon.getMove1() + " \t\t(Guaranteed to Hit)");
+        System.out.println("Second Move is "+ pokemon.getMove2() + " \t\t(80% Chance to Hit)");
+        System.out.println("Third Move is "+ pokemon.getMove3() + " \t\t(60% Chance to Hit)");
     }
     protected void battleScreen() throws InterruptedException {
         System.out.println(pokemonTwo.getPicture());
-        System.out.println(getPlayerTwoHealthBar());
         Thread.sleep(1000);
         System.out.println(pokemonOne.getPicture());
-        System.out.println(getPlayerOneHealthBar());
+        Thread.sleep(1000);
+
+        System.out.println(playerOneName+" : "+pokemonOne.getName());
+        printHealthBar(pokemonOne.getHealth());
+        System.out.println("\t\t\t\t\t\t\t\t"+pokemonOne.getHealth()+"HP\n");
+
+        System.out.println(playerTwoName+" : "+pokemonTwo.getName());
+        printHealthBar(pokemonTwo.getHealth());
+        System.out.println("\t\t\t\t\t\t\t\t"+pokemonTwo.getHealth()+"HP");
     }
 
 
@@ -47,18 +64,10 @@ public class Game {
 //Getters and Setters
 
 
-    public String getPlayerTwoHealthBar() {
-        return "BOB";
+    public void printHealthBar(int health) {
+    Resources.healthBar(health);
     }
 
-    public String getPlayerOneHealthBar() {
-        return "BOB";
-    }
-
-
-
-
-// Need Player Names, and Player Health
 
 
 }

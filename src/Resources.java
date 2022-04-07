@@ -1,6 +1,12 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
 public class Resources {
     private Resources(){
+
     }
+
 
     public static void chooseDifficulty() throws InterruptedException{
         chooseDifficulty(500);
@@ -255,277 +261,116 @@ public class Resources {
     }
 
     public static void introSpeech(int delay) throws InterruptedException {
-        System.out.println("\t\t\t\t\t_________        _______      _______ _______ _______ _______      ______  _______ _________________       _______ ");
-        Thread.sleep (delay);
-        System.out.println("\t\t\t\t\t\\__   __|\\     /(  ____ \\    (  ____ (  ___  (       (  ____ \\    (  ___ \\(  ____ (  ____ \\__   __( (    /(  ____ \\");
-        Thread.sleep (delay);
-        System.out.println("\t\t\t\t\t   ) (  | )   ( | (    \\/    | (    \\| (   ) | () () | (    \\/    | (   ) | (    \\| (    \\/  ) (  |  \\  ( | (    \\/");
-        Thread.sleep (delay);
-        System.out.println("\t\t\t\t\t   | |  | (___) | (__        | |     | (___) | || || | (__        | (__/ /| (__   | |        | |  |   \\ | | (_____ ");
-        Thread.sleep (delay);
-        System.out.println("\t\t\t\t\t   | |  |  ___  |  __)       | | ____|  ___  | |(_)| |  __)       |  __ ( |  __)  | | ____   | |  | (\\ \\) (_____  )");
-        Thread.sleep (delay);
-        System.out.println("\t\t\t\t\t   | |  | (   ) | (          | | \\_  | (   ) | |   | | (          | (  \\ \\| (     | | \\_  )  | |  | | \\   |     ) |");
-        Thread.sleep (delay);
-        System.out.println("\t\t\t\t\t   | |  | )   ( | (____/\\    | (___) | )   ( | )   ( | (____/\\    | )___) | (____/| (___) ___) (__| )  \\  /\\____) |");
-        Thread.sleep (delay);
-        System.out.println("\t\t\t\t\t   )_(  |/     \\(_______/    (_______|/     \\|/     \\(_______/    |/ \\___/(_______(_______\\_______|/    )_\\_______)");
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader("Assets/IntroductionSpeech.txt"));
+            String content = reader.readLine();
+            System.out.println("\n");
+
+            while (content != null){
+                System.out.println(content);
+                content = reader.readLine();
+                Thread.sleep(delay);
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
     }
 
 
 
-    public static String charmanderPicture() {
-        return   ("""
-                              _.--""`-..                     \r
-                            ,'          `.                                                                     \r
-                          ,'          __  `.                            \r
-                         /|          " __   \\                           \r
-                        , |           / |.   .                          \r
-                        |,'          !_.'|   |                          \r
-                      ,'             '   |   |                         \r
-                     /              |`--'|   |                         \r
-                    |                `---'   |                              \r
-                     .   ,                   |                       ,".                     \r
-                      ._     '           _'  |                    , ' \\ `                             \r
-                  `.. `.`-...___,...---""    |       __,.        ,`"   L,|                          \r
-                  |, `- .`._        _,-,.'   .  __.-'-. /        .   ,    \\                       \r
-                -:..     `. `-..--_.,.<       `"      / `.        `-/ |   .                           \r
-                  `,         ""\""'     `.              ,'         |   |  ',,                              \r
-                    `.      '            '            /          '    |'. |/                           \r
-                      `.   |              \\       _,-'           |       ''                             \r
-                        `._'               \\   '"\\                .      |                                    \r
-                           |                '     \\                `._  ,'                                   \r
-                           |                 '     \\                 .'|                                            \r
-                           |                 .      \\                | |                                          \r
-                           |                 |       L              ,' |                                                \r
-                           `                 |       |             /   '                    \r
-                            \\                |       |           ,'   /                       \r
-                          ,' \\               |  _.._ ,-..___,..-'    ,'                 \r
-                         /     .             .      `!             ,j'                          \r
-                        /       `.          /        .           .'/                       \r
-                       .          `.       /         |        _.'.'                     \r
-                        `.          7`'---'          |------"'_.'                   \r
-                       _,.`,_     _'                ,''-----"'                             \r
-                   _,-_    '       `.     .'      ,\\                           \r
-                   -" /`.         _,'     | _  _  _.|                                 \r
-                    ""--'---""\"""'        `' '! |! /                    \r
-                                      \s""".indent(107));
+    public static String getPicture(String name, String side) {
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader("Assets/Pokemon/"+name+"_"+side+".txt"));
+            String content = reader.readLine();
+            String output = "";
+            System.out.println("\n");
+
+            while (content != null){
+                output = output + "\n" +content;
+                //System.out.println("Content : "+content);
+                //System.out.println("Output : "+output);
+                content = reader.readLine();
+            }
+            return output;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return "";
     }
 
-    public static String squirtlePicture(){
-        return ("""
-                _,........__                                \r
-                                                             ,-'            "`-.                                                \r
-                                                            ,'                   `-.                                            \r
-                                                          ,'                        \\                                           \r
-                                                        ,'                           .                                          \r
-                                                        .'\\               ,"".       `                                          \r
-                                                       ._.'|             / |  `       \\                                         \r
-                                                       |   |            `-.'  ||       `.                                       \r
-                                                       |   |            '-._,'||       | \\                                      \r
-                                                       .`.,'             `..,'.'       , |`-.                                   \r
-                                                       l                       .'`.  _/  |   `.                                 \r
-                                                       `-.._'-   ,          _ _'   -" \\  .     `                                \r
-                                                  `.""\"""'-.`-...,---------','         `. `....__.                              \r
-                                                  .'        `"-..___      __,'\\          \\  \\     \\                             \r
-                                                  \\_ .          |   `""\""'    `.           . \\     \\                            \r
-                                                     `.          |              `.          |  .     L                          \r
-                                                       `.        |`--...________.'.        j   |     |                          \r
-                                                         `._    .'      |          `.     .|   ,     |                          \r
-                                                            `--,\\       .            `7""' |  ,      |                          \r
-                                                               ` `      `            /     |  |      |    _,-'""\"`-.            \r
-                                                                \\ `.     .          /      |  '      |  ,'          `.          \r
-                                                                 \\  v.__  .        '       .   \\    /| /              \\        \r
-                                                                  \\/    `""\\""\"""\""`.       \\   \\  /.''                |       \r
-                                                                   `        .        `._ ___,j.  `/ .-       ,---.     |       \r
-                                                                   ,`-.      \\         ."     `.  |/        j     `    |       \r
-                                                                  /    `.     \\       /         \\ /         |     /    j       \r
-                                                                 |       `-.   7-.._ .          |"          '         /        \r
-                                                                 |          `./_    `|          |            .     _,'         \r
-                                                                 `.           / `----|          |-............`---'            \r
-                                                                   \\          \\      |          |           \r
-                                                                  ,'           )     `.         |                              \r
-                                                                   7____,,..--'      /          |                              \r
-                                                                                     `---.__,--.'                              \r
-                                                                                      \s""".indent(72));
 
-    }
 
-    public static String bulbasaurPicture(){
-        return ("""
-                /\r
-                                                                                                       _,.------....___,.' ',.-.\r
-                                                                                                    ,-'          _,.--"        |\r
-                                                                                                  ,'         _.-'              .\r
-                                                                                                 /   ,     ,'                   `\r
-                                                                                                .   /     /                     ``.\r
-                                                                                                |  |     .                       \\.\\\r
-                                                                                      ____      |___._.  |       __               \\ `.\r
-                                                                                    .'    `---""       ``"-.--"'`  \\               .  \\\r
-                                                                                   .  ,            __               `              |   .\r
-                                                                                   `,'         ,-"'  .               \\             |    L\r
-                                                                                  ,'          '    _.'                -._          /    |\r
-                                                                                 ,`-.    ,".   `--'                      >.      ,'     |\r
-                                                                                . .'\\'   `-'       __    ,  ,-.         /  `.__.-      ,'\r
-                                                                                ||:, .           ,'  ;  /  / \\ `        `.    .      .'/\r
-                                                                                j|:D  \\          `--'  ' ,'_  . .         `.__, \\   , /\r
-                                                                               / L:_  |                 .  "' :_;                `.'.'\r
-                                                                               .    ""'                  ""\"""'                    V\r
-                                                                                `.                                 .    `.   _,..  `\r
-                                                                                  `,_   .    .                _,-'/    .. `,'   __  `\r
-                                                                                   ) \\`._        ___....----"'  ,'   .'  \\ |   '  \\  .\r
-                                                                                  /   `. "`-.--"'         _,' ,'     `---' |    `./  |\r
-                                                                                 .   _  `""'--.._____..--"   ,             '         |\r
-                                                                                 | ." `. `-.                /-.           /          ,\r
-                                                                                 | `._.'    `,_            ;  /         ,'          .\r
-                                                                                .'          /| `-.        . ,'         ,           ,\r
-                                                                                '-.__ __ _,','    '`-..___;-...__   ,.'\\ ____.___.'\r
-                                                                                `"^--'..'   '-`-^-'"--    `-^-'`.''""\"""`.,^.`.--' mh""".indent(43));
+    public static void healthBar(int health) {
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader("Assets/HealthBars.txt"));
 
-    }
+            String content = reader.readLine();
 
-    public static String wigglypuffPicture(){
-        return ("""
-                ,-.                                                 .\r
-                .` `.                                             .'|\r
-                ` `. `-._                     _,.--._            /  |\r
-                 `  ..   `.                  /       `.        ,' , '\r
-                  `  ` `.  `-._              | '".     \\      /  / .\r
-                   `. `   `.   `.          ,"'---'      .   ,' ,'' |\r
-                     ` `.    `.  `.       .             |  /  / /  F\r
-                      `. .     `.  \\ ,..--|             |,'  / /  /\r
-                        \\ `.     .  |      \\           ,.   / /  /\r
-                         `._`._   j   .----.`._     _,` | ," / ,'\r
-                            `._`"`  ,',""\""-.`.""--' ,-":+.-'.'\r
-                            ,'     . |`._)   . L     ||_7\\+-'\r
-                           /       | |       | |     .\\   \\.\r
-                          /        |  .      | |      \\\\_,'j\r
-                         .          ._ `----' /        `--" '\r
-                        j             "--..--'              |\r
-                       ,|                        ,-".       |\r
-                     ,' |                       /   |       '\r
-                    /   '                       `..'    ,'   \\\r
-                   /   j                               /      L\r
-                  j    |                              .       |\r
-                  |  _.'                              |     , |\r
-                  `-' .                               |   ,'  '\r
-                      |                               `.-'     .\r
-                      |                                        |\r
-                      |                                        j\r
-                      '                                       .\r
-                       `                                     /\r
-                        `.                                  /\r
-                     ______.                              ,'\r
-                   ,'       `-._                     _,.'""`--..\r
-                  .         ___,+ -...._________,...<_          \\\r
-                   .___,.-"'                          `-._      |\r
-                                                          `-....' \r
-                f""");
-    }
+            if (health >= 80) {
+                while (!content.equals("80")) {
+                    //System.out.println(content);
+                    content = reader.readLine();
+                }
+                content = reader.readLine();
 
-    public static String nidoqueenPicture(){
-        return ("""
-                \r
-                                                          ."                            \r
-                                                        ,'  |				  								\r
-                                                      _,... '.___                         \r
-                                             +--._  ,'.-"+.      "`-.                     \r
-                                         _,---\\   `" / |p|.'     "'   \\                   \r
-                                       ,- _.---".   |_,'      ,-""\""-._|                  \r
-                                     ,' ,.'    .'          ,-'        ,'                  \r
-                                   ,' ,' |    .          .^---._      |                   \r
-                            |. _  `. /   .    |   ,---.+'       `.    |                   \r
-                           ,| | `/\\|.    `    |  .      `-.       .  /                    \r
-                       .---. "`-`.,\\ \\    `-.,'  |         `-._   | '                     \r
-                        `.-'        , ""\""--'..-  \\            `--'.L                     \r
-                          .          |`.     `     `._             _,'   .                \r
-                           `.        |  `.    |_,..   `-..______.-'  _,-| |. ,"\\          \r
-                             -.     /     +--'/    `.            -,"'   `"  ".-'          \r
-                               `-+-'      |  /       `.        '\\ |           .L_         \r
-                           -"--.,-`._..._,' j          `.     / | '           (_,'        \r
-                          `.    j.-'     `- |            \\   j  |  `.  _...___'           \r
-                            `. /__ ,...._  \\|             |  |  |...-`"                   \r
-                              j|  `      ,-/`.           /   `  ;.._                      \r
-                          ,-. ||   |""-.'  |  `..__,...-'     \\'    `.                    \r
-                          `   |/`--    .  /|                  /----.__\\                   \r
-                           \\  .         `' /                 /         \\                  \r
-                            . |           ,`.              ,'     ___..+--.               \r
-                            +-|          /   `-..______..-"     ,"  `.   /___             \r
-                          ,'  |         j               .'    ,'      `"|    /            \r
-                       ,-+    .         |`._          ,+_    /          `-..'             \r
-                   _.-'  |     `.      /    ``-----:='   `.,'         _,..'               \r
-                ,-'      L       `-.--'         ,,'        |       ,-'                    \r
-                \\_        \\         `._    _,.-'           `.___..'                       \r
-                  `.._     `._      __.+'"'                                               \r
-                      `---... +---"" mh                                                   \r
-                """);
-    }
+                while (!content.equals("80")) {
+                    System.out.println(content);
+                    content = reader.readLine();
+                }
+            } else if (health >= 60) {
+                while (!content.equals("60")) {
+                    //System.out.println(content);
+                    content = reader.readLine();
+                }
+                content = reader.readLine();
 
-    public static String fearowPicture(){
-        return ("""
-                    ,---...__     ,.._\r
-                  .""\"_...   ""---\\.,_`"-._                    __,..._\r
-                 ,--   ""\"""\":--..    "-   `-._ _,.        ,-"" ..----'""\",\r
-                `---........_____ ._     `-._  `. |       / /'      '""\""-----.\r
-                \\"'""\"""\"''""\"'"-`           `-. `.      / j     .\\ |\\   -.,:,- .\r
-                 `-.......___     `._           \\  \\    ]\\ |   . |L ||/\\   `. ` .`.\r
-                         __,..==--'/ '           \\  L  A|,'|    \\| |||||  ` .`.. -._\r
-                    .--""          `.             L | j  /'"-.__\\V '/|||   | `. `._ `.\r
-                      `....----_..-`"`/.          | | | j   __ `._   | |'_`.\\  `.  `. |\r
-                            -"'       \\           | `_|.   l  `.  `.   |||   ` | `   \\'\r
-                            `-._,...-""\\-         |        |    .   /`.  \\  ..Y   `.  \\\r
-                               `-..,'  .`         '         L \\  .  `--"`.`.`|  .   \\  |\r
-                                  \\  ,'  `|     ,'          .\\ +-'-...-^._`. | |..  ,\\ '\r
-                                   `\\     `.._ j             /"       \\  |\\ `..- `.'- `\r
-                                    `. ,' | .  |           .'          \\ | `._`.\r
-                                      +   | | j           /             `'    `.`.\r
-                                       `.+._j_'      __..)                      `..\r
-                                        _,-'   .,   j ` .'""`--.                  `\r
-                                     _.' .-'  /,'`"-.  ,` .\\ \\` `\r
-                                   ,'  .' / /`,'    ||'` ,'`T|.`-|\r
-                                 ___,'/_,._/        L|   . |'-'\\"\r
-                                                    `-   ||    '\s""");
-    }
+                while (!content.equals("60")) {
+                    System.out.println(content);
+                    content = reader.readLine();
+                }
+            } else if (health >= 40) {
+                while (!content.equals("40")) {
+                    //System.out.println(content);
+                    content = reader.readLine();
+                }
+                content = reader.readLine();
 
-    public static String playerOneHealthBar20Percent(){
-        return("""  
-               | -------------------------------------------------- |      \r
-               | ==========                                         |  	    \r
-               | ==========                                         |      \r
-               | ==========                                         |      \r
-               | -------------------------------------------------- |      \r
-                """.indent(72));
+                while (!content.equals("40")) {
+                    System.out.println(content);
+                    content = reader.readLine();
+                }
+            } else if (health >= 20) {
+                while (!content.equals("20")) {
+                    //System.out.println(content);
+                    content = reader.readLine();
+                }
+                content = reader.readLine();
 
-    }
-    public static String playerOneHealthBar40Percent(){
-        return "BOB";
-    }
-    public static String playerOneHealthBar60Percent(){
-        return "BOB";
-    }
-    public static String playerOneHealthBar80Percent(){
-        return "BOB";
-    }
-    public static String playerOneHealthBar100Percent(){
-        return "BOB";
-    }
+                while (!content.equals("20")) {
+                    System.out.println(content);
+                    content = reader.readLine();
+                }
 
-    public static String playerTwoHealthBar20Percent(){
-        return "BOB";
-    }
-    public static String playerTwoHealthBar40Percent(){
-        return "BOB";
-    }
-    public static String playerTwoHealthBar60Percent(){
-        return "BOB";
-    }
-    public static String playerTwoHealthBar80Percent(){
-        return "BOB";
-    }
-    public static String playerTwoHealthBar100Percent(){
-        return "BOB";
-    }
+            } else {
+                while (!content.equals("0")) {
+                    //System.out.println(content);
+                    content = reader.readLine();
+                }
+                content = reader.readLine();
 
+                while (!content.equals("0")) {
+                    System.out.println(content);
+                    content = reader.readLine();
+                }
+            }
+            reader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 
 
