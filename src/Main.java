@@ -1,11 +1,21 @@
+
 import java.util.Scanner;
+import static org.fusesource.jansi.Ansi.Color.*;
+import static org.fusesource.jansi.Ansi.ansi;
+import org.fusesource.jansi.AnsiConsole;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {
         Scanner input = new Scanner(System.in);
+        AnsiConsole.systemInstall();
 
-
+        //ansi().fg(RED).a(""));
         Resources.intro(); //Leave Blank for 750
+
+
+
+
+
         System.out.print("Enter your Name : ");
         String name = input.next();
         System.out.print("Multiplayer (yes or no)? : ");

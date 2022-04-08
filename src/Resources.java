@@ -2,6 +2,11 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import static org.fusesource.jansi.Ansi.Color.*;
+import static org.fusesource.jansi.Ansi.ansi;
+
+import org.fusesource.jansi.Ansi;
+import org.fusesource.jansi.AnsiConsole;
 
 public class Resources {
     private Resources(){
@@ -94,16 +99,32 @@ public class Resources {
             BufferedReader reader = new BufferedReader(new FileReader("Assets/Transitions/PokemonIntro.txt"));
 
             String content = reader.readLine();
+            int i=0;
 
             while (content != null){
+                //Color Changing
+                if (i == 0){
+                    System.out.print(ansi().fgRgb(225,225,0));
+                }
+                else if(i == 4){
+                    System.out.print(ansi().fgRgb(255,255,255));
+                }
+                else if (i == 8){
+                    System.out.print(ansi().fgRgb(255,17,0));
+                }
+
                 System.out.println(content);
                 Thread.sleep(timeDelay);
                 content = reader.readLine();
+                i++;
+
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
         }
 
-    } catch (IOException e) {
-        e.printStackTrace();
-    }
+        System.out.println(ansi().reset());
 
        /*
         System.out.println("-------------------------------------------------------------------------------------------------------------------------------------------------");
@@ -244,6 +265,7 @@ public class Resources {
             String content = reader.readLine();
 
             if (health >= 80) {
+                System.out.print(ansi().fg(GREEN));
                 while (!content.equals("80")) {
                     //System.out.println(content);
                     content = reader.readLine();
@@ -277,6 +299,7 @@ public class Resources {
                     content = reader.readLine();
                 }
             } else if (health >= 20) {
+                System.out.print(ansi().fg(RED));
                 while (!content.equals("20")) {
                     //System.out.println(content);
                     content = reader.readLine();
@@ -300,6 +323,7 @@ public class Resources {
                     content = reader.readLine();
                 }
             }
+            ansi().reset();
             reader.close();
         } catch (IOException e) {
             e.printStackTrace();
