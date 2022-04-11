@@ -253,6 +253,7 @@ public class Resources {
                     content = reader.readLine();
                 }
             } else if (health >= 60) {
+                System.out.print(ansi().fg(GREEN));
                 while (!content.equals("60")) {
                     //System.out.println(content);
                     content = reader.readLine();
@@ -264,6 +265,7 @@ public class Resources {
                     content = reader.readLine();
                 }
             } else if (health >= 40) {
+                System.out.print(ansi().fg(YELLOW));
                 while (!content.equals("40")) {
                     //System.out.println(content);
                     content = reader.readLine();
@@ -275,7 +277,7 @@ public class Resources {
                     content = reader.readLine();
                 }
             } else if (health >= 20) {
-                System.out.print(ansi().fg(RED));
+                System.out.print(ansi().fg(YELLOW));
                 while (!content.equals("20")) {
                     //System.out.println(content);
                     content = reader.readLine();
@@ -288,6 +290,7 @@ public class Resources {
                 }
 
             } else {
+                System.out.print(ansi().fg(RED));
                 while (!content.equals("0")) {
                     //System.out.println(content);
                     content = reader.readLine();
@@ -299,7 +302,7 @@ public class Resources {
                     content = reader.readLine();
                 }
             }
-            ansi().reset();
+            System.out.print(ansi().reset()); 
             reader.close();
         } catch (IOException e) {
             e.printStackTrace();
