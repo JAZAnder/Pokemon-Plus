@@ -127,37 +127,6 @@ public class Resources {
         
         System.out.println(ansi().reset());
         
-        
-
-       /*
-        System.out.println("-------------------------------------------------------------------------------------------------------------------------------------------------");
-        Thread.sleep(timeDelay);
-        System.out.println("                  ,'\\ ");
-        Thread.sleep(timeDelay);
-        System.out.println("                  _.----.        ____         ,'  _\\   ___    ___     ____");
-        Thread.sleep(timeDelay);
-        System.out.println("              _,-'       `.     |    |  /`.   \\,-'    |   \\  /   |   |    \\  |`.");
-        Thread.sleep(timeDelay);
-        System.out.println("              \\      __    \\    '-.  | /   `.  ___    |    \\/    |   '-.   \\ |  |");
-        Thread.sleep(timeDelay);
-        System.out.println("               \\.    \\ \\   |  __  |  |/    ,','_  `.  |          | __  |    \\|  |");
-        Thread.sleep(timeDelay);
-        System.out.println("                 \\    \\/   /,' _`.|      ,' / / / /   |          ,' _`.|     |  |");
-        Thread.sleep(timeDelay);
-        System.out.println("                  \\     ,-'/  /   \\    ,'   | \\/ / ,`.|         /  /   \\  |     |");
-        Thread.sleep(timeDelay);
-        System.out.println("                   \\    \\ |   \\_/  |   `-.  \\    `'  /|  |    ||   \\_/  | |\\    |");
-        Thread.sleep(timeDelay);
-        System.out.println("                    \\    \\ \\      /       `-.`.___,-' |  |\\  /| \\      /  | |   |");
-        Thread.sleep(timeDelay);
-        System.out.println("                     \\    \\ `.__,'|  |`-._    `|      |__| \\/ |  `.__,'|  | |   |");
-        Thread.sleep(timeDelay);
-        System.out.println("                      \\_.-'       |__|    `-._ |              '-.|     '-.| |   |");
-        Thread.sleep(timeDelay);
-        System.out.println("                                              `'                            '-._|");
-        Thread.sleep(timeDelay);
-        System.out.println("-------------------------------------------------------------------------------------------------------------------------------------------------");
-*/
     }
 
 
