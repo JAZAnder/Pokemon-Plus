@@ -1,3 +1,8 @@
+import org.fusesource.jansi.Ansi;
+import org.fusesource.jansi.internal.JansiLoader;
+
+import static org.fusesource.jansi.Ansi.ansi;
+
 public class Pokemon {
 
 //Variables
@@ -8,6 +13,7 @@ public class Pokemon {
     private int health;
     private String picture;
     private double randomNumber;
+    private int[] pokemonColors;
 
 
     //Constructors
@@ -31,6 +37,7 @@ public class Pokemon {
             move2 = "Growl";
             move3 = "Scratch";
             name = "Charmander";
+            pokemonColors = new int[]{243, 152, 16};
 
             picture = Resources.getPicture(name, side);
             System.out.println(picture);
@@ -41,6 +48,7 @@ public class Pokemon {
             move2 = "Water Gun";
             move3 = "Tackle";
             name = "Squirtle";
+            pokemonColors = new int[]{0,255, 225};
 
             picture = Resources.getPicture(name, side);
             System.out.println(picture);
@@ -52,6 +60,7 @@ public class Pokemon {
             move2 = "Growth";
             move3 = "Leech Seed";
             name = "Bulbasaur";
+            pokemonColors = new int[]{51, 225, 51};
 
             picture = Resources.getPicture(name, side);
             System.out.println(picture);
@@ -63,6 +72,7 @@ public class Pokemon {
             move2 = "Gyro Ball";
             move3 = "Play Rough";
             name = "Wigglypuff";
+            pokemonColors = new int[]{239, 100, 179};
 
             picture = Resources.getPicture(name, side);
             System.out.println(picture);
@@ -76,6 +86,7 @@ public class Pokemon {
             move2 = "Sizzly Slide";
             move3 = "Shadow Ball";
             name = "Nidoqueen";
+            pokemonColors = new int[]{138, 81, 146};
 
             picture = Resources.getPicture(name, side);
             System.out.println(picture);
@@ -89,6 +100,8 @@ public class Pokemon {
             move2 = "Peck";
             move3 = "Sky Attack";
             name = "Fearow";
+            pokemonColors = new int[]{228, 201, 27};
+
             picture = Resources.getPicture(name, side);
             System.out.println(picture);
 
@@ -101,6 +114,7 @@ public class Pokemon {
             move2 = "Growl";
             move3 = "Scratch";
             name = "Charmander";
+            pokemonColors = new int[]{243, 152, 16};
 
             picture = Resources.getPicture(name, side);
             System.out.println(picture);
@@ -112,6 +126,8 @@ public class Pokemon {
             move2 = "Gyro Ball";
             move3 = "Play Rough";
             name = "Wigglypuff";
+            pokemonColors = new int[]{239, 100, 179};
+
             picture = Resources.getPicture(name, side);
             System.out.println(picture);
 
@@ -133,6 +149,8 @@ public class Pokemon {
             move2 = "Gyro Ball";
             move3 = "Play Rough";
             name = "Wigglypuff";
+            pokemonColors = new int[]{239, 100, 179};
+
 
             picture = Resources.getPicture(name, "Left");
             System.out.println(picture);
@@ -144,6 +162,7 @@ public class Pokemon {
             move2 = "Sizzly Slide";
             move3 = "Shadow Ball";
             name = "Nidoqueen";
+            pokemonColors = new int[]{138, 81, 146};
 
             picture = Resources.getPicture(name, "Left");
             System.out.println(picture);
@@ -155,6 +174,8 @@ public class Pokemon {
             move2 = "Peck";
             move3 = "Sky Attack";
             name = "Fearow";
+            pokemonColors = new int[]{228, 201, 27};
+
             picture = Resources.getPicture(name, "Left");
             System.out.println(picture);
         }
@@ -245,6 +266,13 @@ public class Pokemon {
     }
 
     public String getPicture() {
+
         return picture;
+    }
+
+    public void printPicture(){
+        System.out.print(ansi().fgRgb(pokemonColors[0],pokemonColors[1],pokemonColors[2]));
+        System.out.println(picture);
+        System.out.println(ansi().reset());
     }
 }

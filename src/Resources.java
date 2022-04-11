@@ -1,12 +1,9 @@
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import static org.fusesource.jansi.Ansi.Color.*;
 import static org.fusesource.jansi.Ansi.ansi;
 
-import org.fusesource.jansi.Ansi;
-import org.fusesource.jansi.AnsiConsole;
 
 public class Resources {
     private Resources(){
@@ -19,6 +16,44 @@ public class Resources {
     }
 
     public static void chooseDifficulty(int timeDelay) throws InterruptedException {
+        try{
+            BufferedReader reader = new BufferedReader(new FileReader("Assets/Transitions/Difficulty.txt"));
+
+            String content = reader.readLine();
+            int i=0;
+
+            while (content != null){
+                //Color Changing
+                if (i == 0){
+                    System.out.print(ansi().fgRgb(204,0,0));
+                }
+                else if(i ==9){
+                    System.out.print(ansi().fgRgb(246,14,238));
+                }
+                else if (i == 19){
+                    System.out.print(ansi().fgRgb(18,122,35));
+                }
+                else if (i == 25){
+                    System.out.print(ansi().fgRgb(225,0,0));
+                }
+
+                System.out.println(content);
+                Thread.sleep(timeDelay);
+                content = reader.readLine();
+                i++;
+
+            }
+            reader.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println(ansi().reset());
+
+
+
+        /*
         System.out.println("-------------------------------------------------------------------------------------------------------------------------------------------------");
         Thread.sleep(timeDelay);
         System.out.println("                    ______ _      _     __   __                ______ _  __  __ _            _   _ _         ");
@@ -85,6 +120,8 @@ public class Resources {
         System.out.println();
         System.out.println();
         System.out.println();
+
+         */
 
     }
 
@@ -219,10 +256,9 @@ public class Resources {
             String output = "";
             System.out.println("\n");
 
+
             while (content != null){
                 output = output + "\n" +content;
-                //System.out.println("Content : "+content);
-                //System.out.println("Output : "+output);
                 content = reader.readLine();
             }
             reader.close();

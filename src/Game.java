@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+import static org.fusesource.jansi.Ansi.ansi;
+
 public class Game {
 
 
@@ -44,9 +46,10 @@ public class Game {
         System.out.println("Third Move is "+ pokemon.getMove3() + " \t\t(60% Chance to Hit)");
     }
     protected void battleScreen() throws InterruptedException {
-        System.out.println(pokemonTwo.getPicture());
+
+        pokemonTwo.printPicture();
         Thread.sleep(1000);
-        System.out.println(pokemonOne.getPicture());
+        pokemonOne.printPicture();
         Thread.sleep(1000);
 
         System.out.println(playerOneName+" : "+pokemonOne.getName());
