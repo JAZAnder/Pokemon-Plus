@@ -119,12 +119,15 @@ public class Resources {
                 i++;
 
             }
+            reader.close();
 
         } catch (IOException e) {
             e.printStackTrace();
         }
-
+        
         System.out.println(ansi().reset());
+        
+        
 
        /*
         System.out.println("-------------------------------------------------------------------------------------------------------------------------------------------------");
@@ -174,6 +177,7 @@ public class Resources {
                 Thread.sleep(timeDelay);
                 content = reader.readLine();
             }
+            reader.close();
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -201,6 +205,7 @@ public class Resources {
                 Thread.sleep(timeDelay);
                 content = reader.readLine();
             }
+            reader.close();
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -227,6 +232,7 @@ public class Resources {
                 content = reader.readLine();
                 Thread.sleep(delay);
             }
+            reader.close();
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -250,6 +256,7 @@ public class Resources {
                 //System.out.println("Output : "+output);
                 content = reader.readLine();
             }
+            reader.close();
             return output;
         } catch (IOException e) {
             e.printStackTrace();
