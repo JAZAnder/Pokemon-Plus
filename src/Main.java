@@ -5,6 +5,10 @@ import static org.fusesource.jansi.Ansi.ansi;
 import org.fusesource.jansi.AnsiConsole;
 
 public class Main {
+
+    static String playerOneName;
+    static String playerTwoName;
+
     public static void main(String[] args) throws InterruptedException {
         Scanner input = new Scanner(System.in);
         AnsiConsole.systemInstall();
@@ -16,17 +20,23 @@ public class Main {
 
 
 
-        System.out.print("Enter your Name : ");
-        String name = input.next();
+        if(playerOneName == null){
+            System.out.print("Enter your Name : ");
+            playerOneName = input.next();
+        }
+
         System.out.print("Multiplayer (yes or no)? : ");
 
 
 
         if((input.next()).equalsIgnoreCase("yes")){
-            System.out.print("Enter Player 2 Name : ");
-            String name2 = input.next();
 
-            MultiPlayerGame MPG = new MultiPlayerGame(name, name2);
+            if(playerTwoName == null){
+                System.out.print("Enter Player 2 Name : ");
+                playerTwoName = input.next();
+            }
+
+            MultiPlayerGame MPG = new MultiPlayerGame(playerOneName, playerTwoName);
             MPG.beginTheGame();
 
         }
@@ -38,22 +48,27 @@ public class Main {
             String difficulty = input.next();
             SinglePlayerGame SPG;
             if((difficulty.toLowerCase()).charAt(0) == 'e'){
-                SPG = new SinglePlayerGame(name, 120, 100);
+                SPG = new SinglePlayerGame(playerOneName, 120, 100);
             }
             else if((difficulty.toLowerCase()).charAt(0) == 'h'){
-                SPG = new SinglePlayerGame(name, 100, 120);
+                SPG = new SinglePlayerGame(playerOneName, 100, 120);
             }
             else{
-                SPG = new SinglePlayerGame(name, 100, 100);
+                SPG = new SinglePlayerGame(playerOneName, 100, 100);
             }
 
             SPG.beginTheGame();
 
 
-
-
         }
 
+        System.out.println("Play Again ? ");
+        if(input.next().equalsIgnoreCase("yes")){
+            main(args);
+        }
+        else{
+
+        }
         
         input.close();
     }
