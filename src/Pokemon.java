@@ -204,13 +204,25 @@ public class Pokemon {
             System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t"+name+" used "+move3);
             return 20;
         }
+        else if(attack == 4&&health<30){
+            System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t"+name+" used Heal\n"+
+                    "\t\t\t\t\t\t\t\t\t\t\t\t\t"+name+" now has "+getHealth()+"HP");
+            return 0;
+        }
+        else if(attack == 69){
+            System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t"+name+" used Explosion");
+            return 80;
+        }
         else {
             System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t"+name+" missed ");
             return 0;
         }
     }
     public int attack(String attack){
+
+
         int i = 0;
+        //Fixes if Multiple moves Start with Same Letter
         if (attack.length() > 1) {
             while (move1.toLowerCase().charAt(i) == move2.toLowerCase().charAt(i)||
                     move1.toLowerCase().charAt(i)==move3.toLowerCase().charAt(i)||
@@ -229,8 +241,15 @@ public class Pokemon {
         else if((attack.toLowerCase()).charAt(i) == move3.toLowerCase().charAt(i)||attack.equals("3")) {
             return attack(3);
         }
+        else if((attack.toLowerCase().charAt(i)) == "Heal".toLowerCase().charAt(i) ||attack.equals("4")) {
+            return attack(4);
+        }
+        else if((attack.toLowerCase()).charAt(i) == "Break em".toLowerCase().charAt(i)){
+            return attack(69);
+        }
+
         else{
-         return attack(4);
+         return 0;
         }
 
     }

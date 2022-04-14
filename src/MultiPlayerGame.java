@@ -3,10 +3,7 @@ public class MultiPlayerGame extends Game{
 
 
 //Constructors
-    public MultiPlayerGame(String name, String name2) throws InterruptedException {
-        playerOneName = name;
-        playerTwoName = name2;
-
+    public MultiPlayerGame() throws InterruptedException {
         Resources.pickYourPokemonPlayerOnePicture(playerOneName);
         pokemonOne = new Pokemon(input.next(),100,1);
         rightMoveList(pokemonOne);

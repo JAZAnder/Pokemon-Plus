@@ -6,8 +6,8 @@ public class Game {
 
 
 //Variables
-    String playerOneName;
-    String playerTwoName;
+    static String playerOneName;
+    static String playerTwoName;
     Pokemon pokemonOne;
     Pokemon pokemonTwo;
     String currentAttack;
@@ -36,6 +36,9 @@ public class Game {
         System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\tFirst Move is "+ pokemon.getMove1() + " (10HP) \t\t(Guaranteed to Hit)");
         System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\tSecond Move is "+ pokemon.getMove2() + " (15HP) \t\t(80% Chance to Hit)");
         System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\tThird Move is "+ pokemon.getMove3() + " (20HP) \t\t(60% Chance to Hit) ");
+        if(pokemon.getHealth()<30){
+            System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\tFourth Move is "+ "Heal" + " (+15HP) \t\t(Guaranteed to Heal) ");
+        }
 
 
     }

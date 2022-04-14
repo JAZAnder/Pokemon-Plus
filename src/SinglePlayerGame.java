@@ -3,9 +3,7 @@ public class SinglePlayerGame extends Game{
 
 
 //Constructors
-    public SinglePlayerGame(String name, int playerHealth, int opponentHealth) throws InterruptedException {
-        this.playerOneName = name;
-        this.playerTwoName = "Opponent";
+    public SinglePlayerGame( int playerHealth, int opponentHealth) throws InterruptedException {
 
         Resources.pickYourPokemonPlayerOnePicture(playerOneName);
         pokemonOne = new Pokemon(input.next(),playerHealth,1);

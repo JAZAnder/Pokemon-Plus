@@ -6,8 +6,6 @@ import org.fusesource.jansi.AnsiConsole;
 
 public class Main {
 
-    static String playerOneName;
-    static String playerTwoName;
 
     public static void main(String[] args) throws InterruptedException {
         Scanner input = new Scanner(System.in);
@@ -20,41 +18,55 @@ public class Main {
 
 
 
-        if(playerOneName == null){
+        if(Game.playerOneName == null){
             System.out.print("Enter your Name : ");
-            playerOneName = input.next();
+            Game.playerOneName = input.next();
         }
 
-        System.out.print("Multiplayer (yes or no)? : ");
+        if(args[0].equals(null)){
+            System.out.print("Multiplayer (yes or no)? : ");
+            args[0] = input.next();
+        }
 
 
 
-        if((input.next()).equalsIgnoreCase("yes")){
 
-            if(playerTwoName == null){
+
+        if(args[0].equalsIgnoreCase("yes")){
+
+            if(Game.playerTwoName == null||Game.playerTwoName.equals("Opponent")){
                 System.out.print("Enter Player 2 Name : ");
-                playerTwoName = input.next();
+                Game.playerTwoName = input.next();
             }
 
-            MultiPlayerGame MPG = new MultiPlayerGame(playerOneName, playerTwoName);
+            MultiPlayerGame MPG = new MultiPlayerGame();
             MPG.beginTheGame();
 
         }
         else {
             //System.out.println("Single");
 
-            Resources.chooseDifficulty(100); //Leave Blank for 500
-            System.out.print("Pick your Difficulty (Default is Medium) : ");
-            String difficulty = input.next();
-            SinglePlayerGame SPG;
-            if((difficulty.toLowerCase()).charAt(0) == 'e'){
-                SPG = new SinglePlayerGame(playerOneName, 120, 100);
-            }
-            else if((difficulty.toLowerCase()).charAt(0) == 'h'){
-                SPG = new SinglePlayerGame(playerOneName, 100, 120);
+            Game.playerTwoName = "Opponent";
+
+            String difficulty;
+            if(args[1].equals(null)){
+                Resources.chooseDifficulty(100); //Leave Blank for 500
+                System.out.print("Pick your Difficulty (Default is Medium) : ");
+                difficulty = input.next();
             }
             else{
-                SPG = new SinglePlayerGame(playerOneName, 100, 100);
+                difficulty = args[1];
+            }
+
+            SinglePlayerGame SPG;
+            if((difficulty.toLowerCase()).charAt(0) == 'e'){
+                SPG = new SinglePlayerGame(120, 100);
+            }
+            else if((difficulty.toLowerCase()).charAt(0) == 'h'){
+                SPG = new SinglePlayerGame( 100, 120);
+            }
+            else{
+                SPG = new SinglePlayerGame( 100, 100);
             }
 
             SPG.beginTheGame();
